@@ -16,7 +16,8 @@
 				"dev": true
 			},
 			"cacheVariables": {
-				"CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+				"CMAKE_CONFIGURATION_TYPES": "Debug;Release",
+				"CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
 			}
 		},
 		{
@@ -53,10 +54,10 @@
 			}
 		},
 		{
-			"name": "generator-msvc",
+			"name": "generator-ninja",
 			"inherits": "x64",
 			"hidden": true,
-			"generator": "Visual Studio 17 2022"
+			"generator": "Ninja"
 		},
 		{
 			"name": "compiler-msvc",
@@ -74,7 +75,7 @@
 				"common",
 				"packaging-vcpkg",
 				"buildtype-debug-msvc",
-				"generator-msvc",
+				"generator-ninja",
 				"compiler-msvc"
 			],
 			"binaryDir": "${sourceDir}/build/debug-msvc"
@@ -85,7 +86,7 @@
 				"common",
 				"packaging-vcpkg",
 				"buildtype-release-msvc",
-				"generator-msvc",
+				"generator-ninja",
 				"compiler-msvc"
 			],
 			"binaryDir": "${sourceDir}/build/release-msvc"

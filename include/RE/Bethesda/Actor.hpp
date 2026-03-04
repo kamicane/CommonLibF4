@@ -333,7 +333,7 @@ namespace RE
 		void SetupFireSounds(Actor& a_actor, BGSObjectInstanceT<TESObjectWEAP>& a_weapon)
 		{
 			using func_t = decltype(&EquippedWeaponData::SetupFireSounds);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1468462, 2232275) };
+			static REL::Relocation<func_t> func{ ID::EquippedWeaponData::SetupFireSounds };
 			return func(this, a_actor, a_weapon);
 		}
 
@@ -565,35 +565,35 @@ namespace RE
 		[[nodiscard]] TESAmmo* GetCurrentAmmo(BGSEquipIndex a_equipIndex) const
 		{
 			using func_t = decltype(&AIProcess::GetCurrentAmmo);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1154936, 2232300) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::GetCurrentAmmo };
 			return func(this, a_equipIndex);
 		}
 
 		COMMAND_TYPE GetCommandType()
 		{
 			using func_t = decltype(&AIProcess::GetCommandType);
-			static REL::Relocation<func_t> func{ REL::RelocationID(678523, 2231825) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::GetCommandType };
 			return func(this);
 		}
 
 		[[nodiscard]] ObjectRefHandle GetOccupiedFurniture()
 		{
 			using func_t = decltype(&AIProcess::GetOccupiedFurniture);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1162965, 2232401) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::GetOccupiedFurniture };
 			return func(this);
 		}
 
 		bool IsWeaponSubgraphFinishedLoading(const Actor& a_actor)
 		{
 			using func_t = decltype(&AIProcess::IsWeaponSubgraphFinishedLoading);
-			static REL::Relocation<func_t> func{ REL::RelocationID(320183, 2231757) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::IsWeaponSubgraphFinishedLoading };
 			return func(this, a_actor);
 		}
 
 		void KnockExplosion(Actor* a_actor, const NiPoint3& a_location, float a_magnitude)
 		{
 			using func_t = decltype(&AIProcess::KnockExplosion);
-			static REL::Relocation<func_t> func{ REL::RelocationID(533106, 2232384) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::KnockExplosion };
 			return func(this, a_actor, a_location, a_magnitude);
 		}
 
@@ -605,70 +605,70 @@ namespace RE
 		bool ProcessGreet(Actor* a_actor, DIALOGUE_TYPE a_type, DIALOGUE_SUBTYPE a_subType, TESObjectREFR* a_target, BGSDialogueBranch* a_branch, bool a_forceSub, bool a_stop, bool a_que, bool a_sayCallback)
 		{
 			using func_t = decltype(&AIProcess::ProcessGreet);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1174935, 2231808) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::ProcessGreet };
 			return func(this, a_actor, a_type, a_subType, a_target, a_branch, a_forceSub, a_stop, a_que, a_sayCallback);
 		}
 
 		bool RequestLoadAnimationsForWeaponChange(Actor& a_actor)
 		{
 			using func_t = decltype(&AIProcess::RequestLoadAnimationsForWeaponChange);
-			static REL::Relocation<func_t> func{ REL::RelocationID(666002, 2231758) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::RequestLoadAnimationsForWeaponChange };
 			return func(this, a_actor);
 		}
 
 		void SetActorsDetectionEvent(Actor* a_actor, const NiPoint3& a_location, std::int32_t a_soundLevel, TESObjectREFR* a_refr)
 		{
 			using func_t = decltype(&AIProcess::SetActorsDetectionEvent);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1376336, 2231738) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::SetActorsDetectionEvent };
 			return func(this, a_actor, a_location, a_soundLevel, a_refr);
 		}
 
 		void SetCurrentAmmo(BGSEquipIndex a_equipIndex, TESAmmo* a_ammo)
 		{
 			using func_t = decltype(&AIProcess::SetCurrentAmmo);
-			static REL::Relocation<func_t> func{ REL::RelocationID(795983, 2232302) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::SetCurrentAmmo };
 			return func(this, a_equipIndex, a_ammo);
 		}
 
 		void SetCommandType(COMMAND_TYPE a_type)
 		{
 			using func_t = decltype(&AIProcess::SetCommandType);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1555789, 2231826) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::SetCommandType };
 			return func(this, a_type);
 		}
 
 		void SetEquippedItem(Actor* a_actor, const BGSObjectInstance& a_instance, const BGSEquipSlot* a_slot)
 		{
 			using func_t = decltype(&AIProcess::SetEquippedItem);
-			static REL::Relocation<func_t> func{ REL::ID(1200276) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::SetEquippedItem };
 			return func(this, a_actor, a_instance, a_slot);
 		}
 
 		bool SetupSpecialIdle(Actor& a_actor, DEFAULT_OBJECT a_defaultObject, TESIdleForm* a_idle, bool a_testConditions, TESObjectREFR* a_targetOverride)
 		{
 			using func_t = decltype(&AIProcess::SetupSpecialIdle);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1446774, 2231704) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::SetupSpecialIdle };
 			return func(this, a_actor, a_defaultObject, a_idle, a_testConditions, a_targetOverride);
 		}
 
 		bool SetWeaponBonesCulled(const Actor& a_actor, bool a_stateToSet, WEAPON_CULL_TYPE a_weaponCullType)
 		{
 			using func_t = decltype(&AIProcess::SetWeaponBonesCulled);
-			static REL::Relocation<func_t> func{ REL::RelocationID(397172, 2232535) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::SetWeaponBonesCulled };
 			return func(this, a_actor, a_stateToSet, a_weaponCullType);
 		}
 
 		TESPackage* GetPackageThatIsRunning()
 		{
 			using func_t = decltype(&AIProcess::GetPackageThatIsRunning);
-			static REL::Relocation<func_t> func{ REL::ID(148295) };
+			static REL::Relocation<func_t> func{ REL::ID(148295) }; // skip
 			return func(this);
 		}
 
 		void StopCurrentIdle(Actor* a_actor, bool a_instant, bool a_killFlavor)
 		{
 			using func_t = decltype(&AIProcess::StopCurrentIdle);
-			static REL::Relocation<func_t> func{ REL::RelocationID(434460, 2231705) };
+			static REL::Relocation<func_t> func{ ID::AIProcess::StopCurrentIdle };
 			return func(this, a_actor, a_instant, a_killFlavor);
 		}
 
@@ -741,14 +741,14 @@ namespace RE
 		[[nodiscard]] bool IsTakingHealthDamageFromActiveEffect()
 		{
 			using func_t = decltype(&MagicTarget::IsTakingHealthDamageFromActiveEffect);
-			static REL::Relocation<func_t> func{ REL::RelocationID(999442, 2226397) };
+			static REL::Relocation<func_t> func{ ID::MagicTarget::IsTakingHealthDamageFromActiveEffect };
 			return func(this);
 		}
 
 		[[nodiscard]] bool IsTakingRadDamageFromActiveEffect()
 		{
 			using func_t = decltype(&MagicTarget::IsTakingRadDamageFromActiveEffect);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1079111, 2226398) };
+			static REL::Relocation<func_t> func{ ID::MagicTarget::IsTakingRadDamageFromActiveEffect };
 			return func(this);
 		}
 
@@ -1063,7 +1063,7 @@ namespace RE
 		virtual bool DrinkPotion(AlchemyItem* a_potion, std::uint32_t a_stackID);																														// 119
 		virtual bool CheckCast(MagicItem* a_spell, bool a_dualCast, MagicSystem::CannotCastReason* a_reason);																							// 11A
 		virtual void CheckTempModifiers() { return; }																																					// 11B
-		virtual void SetLastRiddenMount(ActorHandle a_mount) { return; }																																// 11C
+		virtual void SetLastRiddenMount(ActorHandle /* a_mount */) { return; }																																// 11C
 		virtual ActorHandle QLastRiddenMount() const;																																					// 11D
 		virtual bool CalculateCachedOwnerIsUndead() const;																																				// 11E
 		virtual bool CalculateCachedOwnerIsNPC() const;																																					// 11F
@@ -1090,35 +1090,35 @@ namespace RE
 		void AddPerk(BGSPerk* a_perk, std::uint8_t a_rank = 0)
 		{
 			using func_t = decltype(&Actor::AddPerk);
-			static REL::Relocation<func_t> func{ REL::RelocationID(187096, 2230121) };
+			static REL::Relocation<func_t> func{ ID::Actor::AddPerk };
 			return func(this, a_perk, a_rank);
 		}
 
 		bool CanUseIdle(TESIdleForm* a_idle) const
 		{
 			using func_t = decltype(&Actor::CanUseIdle);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1223707, 2229592) };
+			static REL::Relocation<func_t> func{ ID::Actor::CanUseIdle };
 			return func(this, a_idle);
 		}
 
 		void ClearAttackStates()
 		{
 			using func_t = decltype(&Actor::ClearAttackStates);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1525555, 2229773) };
+			static REL::Relocation<func_t> func{ ID::Actor::ClearAttackStates };
 			return func(this);
 		}
 
 		void EndInterruptPackage(bool a_notRunOnceDialogue)
 		{
 			using func_t = decltype(&Actor::EndInterruptPackage);
-			static REL::Relocation<func_t> func{ REL::RelocationID(575188, 2229892) };
+			static REL::Relocation<func_t> func{ ID::Actor::EndInterruptPackage };
 			return func(this, a_notRunOnceDialogue);
 		}
 
 		void ExitCover()
 		{
 			using func_t = decltype(&Actor::ExitCover);
-			static REL::Relocation<func_t> func{ REL::RelocationID(770035, 2231166) };
+			static REL::Relocation<func_t> func{ ID::Actor::ExitCover };
 			return func(this);
 		}
 
@@ -1130,28 +1130,28 @@ namespace RE
 		void GetAimVector(NiPoint3& a_aimVector)
 		{
 			using func_t = decltype(&Actor::GetAimVector);
-			static REL::Relocation<func_t> func{ REL::RelocationID(554863, 2230378) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetAimVector };
 			return func(this, a_aimVector);
 		}
 
 		NiAVObject* GetClosestBone(NiPoint3 a_impactLocation, NiPoint3 a_movementDirection)
 		{
 			using func_t = decltype(&Actor::GetClosestBone);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1180004, 2230051) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetClosestBone };
 			return func(this, a_impactLocation, a_movementDirection);
 		}
 
 		CFilter GetCollisionFilter()
 		{
 			using func_t = decltype(&Actor::GetCollisionFilter);
-			static REL::Relocation<func_t> func{ REL::ID(1474995) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetCollisionFilter };
 			return func(this);
 		}
 
 		TESCombatStyle* GetCombatStyle()
 		{
 			using func_t = decltype(&Actor::GetCombatStyle);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1270929, 2231053) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetCombatStyle };
 			return func(this);
 		}
 
@@ -1163,49 +1163,49 @@ namespace RE
 		std::uint32_t GetCurrentCollisionGroup()
 		{
 			using func_t = decltype(&Actor::GetCurrentCollisionGroup);
-			static REL::Relocation<func_t> func{ REL::ID(410500) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetCurrentCollisionGroup };
 			return func(this);
 		}
 
 		bool GetCurrentFireLocation(BGSEquipIndex a_index, NiPoint3& a_fireLocation)
 		{
 			using func_t = decltype(&Actor::GetCurrentFireLocation);
-			static REL::Relocation<func_t> func{ REL::RelocationID(663107, 2231167) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetCurrentFireLocation };
 			return func(this, a_index, a_fireLocation);
 		}
 
 		float GetDesiredSpeed()
 		{
 			using func_t = decltype(&Actor::GetDesiredSpeed);
-			static REL::Relocation<func_t> func{ REL::RelocationID(106892, 2230410) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetDesiredSpeed };
 			return func(this);
 		}
 
 		float GetHealthPercent()
 		{
 			using func_t = decltype(&Actor::GetHealthPercent);
-			static REL::Relocation<func_t> func{ REL::ID(260817) };
+			static REL::Relocation<func_t> func{ REL::ID(260817) }; // skip
 			return func(this);
 		}
 
 		[[nodiscard]] bool GetHostileToActor(Actor* a_actor)
 		{
 			using func_t = decltype(&Actor::GetHostileToActor);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1148686, 2229968) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetHostileToActor };
 			return func(this, a_actor);
 		}
 
 		[[nodiscard]] ActorHandle GetMountHandle()
 		{
 			using func_t = decltype(&Actor::GetMountHandle);
-			static REL::Relocation<func_t> func{ REL::RelocationID(313362, 2231230) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetMountHandle };
 			return func(this);
 		}
 
 		[[nodiscard]] std::int16_t GetLevel()
 		{
 			using func_t = decltype(&Actor::GetLevel);
-			static REL::Relocation<func_t> func{ REL::RelocationID(661617, 2229734) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetLevel };
 			return func(this);
 		}
 
@@ -1214,91 +1214,91 @@ namespace RE
 		bool GetOfferBarter()
 		{
 			using func_t = decltype(&Actor::GetOfferBarter);
-			static REL::Relocation<func_t> func{ REL::ID(1482717) };
+			static REL::Relocation<func_t> func{ REL::ID(1482717) }; // skip
 			return func(this);
 		}
 
 		[[nodiscard]] std::uint8_t GetPerkRank(BGSPerk* a_perk)
 		{
 			using func_t = decltype(&Actor::GetPerkRank);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1368313, 2230125) };
+			static REL::Relocation<func_t> func{ ID::Actor::GetPerkRank };
 			return func(this, a_perk);
 		}
 
 		void HandleDefaultAnimationSwitch()
 		{
 			using func_t = decltype(&Actor::HandleDefaultAnimationSwitch);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1163130, 2229780) };
+			static REL::Relocation<func_t> func{ ID::Actor::HandleDefaultAnimationSwitch };
 			return func(this);
 		}
 
 		void HandleItemEquip(bool bCullBone)
 		{
 			using func_t = decltype(&Actor::HandleItemEquip);
-			static REL::Relocation<func_t> func{ REL::RelocationID(164912, 2229781) };
+			static REL::Relocation<func_t> func{ ID::Actor::HandleItemEquip };
 			return func(this, bCullBone);
 		}
 
 		void InitiateDoNothingPackage()
 		{
 			using func_t = decltype(&Actor::InitiateDoNothingPackage);
-			static REL::Relocation<func_t> func{ REL::RelocationID(89993, 2229807) };
+			static REL::Relocation<func_t> func{ ID::Actor::InitiateDoNothingPackage };
 			return func(this);
 		}
 
 		bool IsCrippled()
 		{
 			using func_t = decltype(&Actor::IsCrippled);
-			static REL::Relocation<func_t> func{ REL::ID(1238666) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsCrippled };
 			return func(this);
 		}
 
 		bool IsFollowing()
 		{
 			using func_t = decltype(&Actor::IsFollowing);
-			static REL::Relocation<func_t> func{ REL::RelocationID(629579, 2230013) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsFollowing };
 			return func(this);
 		}
 
 		[[nodiscard]] bool IsJumping()
 		{
 			using func_t = decltype(&Actor::IsJumping);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1041558, 2229640) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsJumping };
 			return func(this);
 		}
 
 		bool IsPathValid()
 		{
 			using func_t = decltype(&Actor::IsPathValid);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1522194, 2230279) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsPathValid };
 			return func(this);
 		}
 
 		bool IsPathing()
 		{
 			using func_t = decltype(&Actor::IsPathing);
-			static REL::Relocation<func_t> func{ REL::RelocationID(989661, 2234312) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsPathing };
 			return func(this);
 		}
 
 		bool IsPathingComplete()
 		{
 			using func_t = decltype(&Actor::IsPathingComplete);
-			static REL::Relocation<func_t> func{ REL::RelocationID(817283, 2230274) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsPathingComplete };
 			return func(this);
 		}
 
 		bool IsQuadruped()
 		{
 			using func_t = decltype(&Actor::IsQuadruped);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1552322, 2229614) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsQuadruped };
 			return func(this);
 		}
 
 		bool IsSneaking()
 		{
 			using func_t = decltype(&Actor::IsSneaking);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1173627, 2207655) };
+			static REL::Relocation<func_t> func{ ID::Actor::IsSneaking };
 			return func(this);
 		}
 
@@ -1311,42 +1311,42 @@ namespace RE
 		bhkCharacterController* Move(float a_deltaTime, NiPoint3 a_deltaPos, bool a_defer)
 		{
 			using func_t = decltype(&Actor::Move);
-			static REL::Relocation<func_t> func{ REL::RelocationID(737625, 2229934) };
+			static REL::Relocation<func_t> func{ ID::Actor::Move };
 			return func(this, a_deltaTime, a_deltaPos, a_defer);
 		}
 
 		bool PerformAction(BGSAction* a_action, TESObjectREFR* a_target)
 		{
 			using func_t = decltype(&Actor::PerformAction);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1057231, 2231177) };
+			static REL::Relocation<func_t> func{ ID::Actor::PerformAction };
 			return func(this, a_action, a_target);
 		}
 
 		void RemovePerk(BGSPerk* a_perk)
 		{
 			using func_t = decltype(&Actor::RemovePerk);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1316475, 2230122) };
+			static REL::Relocation<func_t> func{ ID::Actor::RemovePerk };
 			return func(this, a_perk);
 		}
 
 		int32_t RequestDetectionLevel(Actor* a_target, DETECTION_PRIORITY a_priority = DETECTION_PRIORITY::kNormal)
 		{
 			using func_t = decltype(&Actor::RequestDetectionLevel);
-			static REL::Relocation<func_t> func{ REL::ID(943772) };
+			static REL::Relocation<func_t> func{ REL::ID(943772) }; // skip
 			return func(this, a_target, a_priority);
 		}
 
 		void Reset3D(bool a_reloadAll, std::uint32_t a_additionalFlags, bool a_queueReset, std::uint32_t a_excludeFlags)
 		{
 			using func_t = decltype(&Actor::Reset3D);
-			static REL::Relocation<func_t> func{ REL::RelocationID(302888, 2229913) };
+			static REL::Relocation<func_t> func{ ID::Actor::Reset3D };
 			return func(this, a_reloadAll, a_additionalFlags, a_queueReset, a_excludeFlags);
 		}
 
 		void RewardExperience(float a_amount, bool a_direct, TESObjectREFR* a_actionTarget, TESObjectREFR* a_killWeapon)
 		{
 			using func_t = decltype(&Actor::RewardExperience);
-			static REL::Relocation<func_t> func{ REL::RelocationID(262786, 2230428) };
+			static REL::Relocation<func_t> func{ ID::Actor::RewardExperience };
 			return func(this, a_amount, a_direct, a_actionTarget, a_killWeapon);
 		}
 
@@ -1360,21 +1360,21 @@ namespace RE
 		void SetGunState(GUN_STATE a_gunState, bool a_val = true)
 		{
 			using func_t = decltype(&Actor::SetGunState);
-			static REL::Relocation<func_t> func{ REL::RelocationID(977675, 2231175) };
+			static REL::Relocation<func_t> func{ ID::Actor::SetGunState };
 			return func(this, a_gunState, a_val);
 		}
 
 		void SetHeading(float a_angle)
 		{
 			using func_t = decltype(&Actor::SetHeading);
-			static REL::Relocation<func_t> func{ REL::RelocationID(353571, 2229625) };
+			static REL::Relocation<func_t> func{ ID::Actor::SetHeading };
 			return func(this, a_angle);
 		}
 
 		void TrespassAlarm(TESObjectREFR* a_refr, TESForm* a_owner, std::int32_t a_crime)
 		{
 			using func_t = decltype(&Actor::TrespassAlarm);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1109888, 2229834) };
+			static REL::Relocation<func_t> func{ ID::Actor::TrespassAlarm };
 			return func(this, a_refr, a_owner, a_crime);
 		}
 
@@ -1442,7 +1442,7 @@ namespace RE
 	public:
 		[[nodiscard]] static ActorEquipManager* GetSingleton()
 		{
-			static REL::Relocation<ActorEquipManager**> singleton{ REL::RelocationID(1174340, 2690994) };
+			static REL::Relocation<ActorEquipManager**> singleton{ ID::ActorEquipManager::Singleton };
 			return *singleton;
 		}
 
@@ -1459,7 +1459,7 @@ namespace RE
 			bool a_locked)
 		{
 			using func_t = decltype(&ActorEquipManager::EquipObject);
-			static REL::Relocation<func_t> func{ REL::RelocationID(988029, 2231392) };
+			static REL::Relocation<func_t> func{ ID::ActorEquipManager::EquipObject };
 			return func(this, a_actor, a_object, a_stackID, a_number, a_slot, a_queueEquip, a_forceEquip, a_playSounds, a_applyNow, a_locked);
 		}
 
@@ -1476,7 +1476,7 @@ namespace RE
 			const BGSEquipSlot* a_slotBeingReplaced)
 		{
 			using func_t = decltype(&ActorEquipManager::UnequipObject);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1292493, 2231395) };
+			static REL::Relocation<func_t> func{ ID::ActorEquipManager::UnequipObject };
 			return func(this, a_actor, a_object, a_number, a_slot, a_stackID, a_queueEquip, a_forceEquip, a_playSounds, a_applyNow, a_slotBeingReplaced);
 		}
 	};

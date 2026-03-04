@@ -156,7 +156,7 @@ namespace RE
 		virtual bool IsActive() override;														   // 08
 		virtual bool UpdateParams(ImageSpaceEffectParam* a_param) override;						   // 09
 
-		inline static REL::Relocation<bool*> bDisable{ REL::RelocationID(372489, 2713225) };
+		inline static REL::Relocation<bool*> bDisable{ ID::ImageSpaceEffectFullScreenBlur::Disable };
 
 		// members
 		ImageSpaceTexture buffer[3]; // B0
@@ -180,7 +180,7 @@ namespace RE
 		virtual bool IsActive() override;														   // 08
 		virtual bool UpdateParams(ImageSpaceEffectParam* a_param) override;						   // 09
 
-		inline static REL::Relocation<bool*> bDisable{ REL::RelocationID(1523708, 2713237) };
+		inline static REL::Relocation<bool*> bDisable{ ID::ImageSpaceEffectGetHit::Disable };
 
 		// members
 		float* data;				 // B0
@@ -203,7 +203,7 @@ namespace RE
 		virtual void Shutdown() override;														   // 04
 		virtual bool UpdateParams(ImageSpaceEffectParam* a_param) override;						   // 09
 
-		// inline static REL::Relocation<bool*> UsePipboyScreenMask{ REL::ID(2678029) };
+		inline static REL::Relocation<bool*> UsePipboyScreenMask{ RE::ID::ImageSpaceEffectHDR::UsePipboyScreenMask };
 	};
 	static_assert(sizeof(ImageSpaceEffectHDR) == 0xB0);
 
@@ -237,7 +237,7 @@ namespace RE
 		virtual void ReturnTextures() override;													   // 06
 		virtual bool UpdateParams(ImageSpaceEffectParam* a_param) override;						   // 09
 
-		inline static REL::Relocation<bool*> bPowerArmorPipboy{ REL::ID(1065542) };
+		inline static REL::Relocation<bool*> bPowerArmorPipboy{ ID::ImageSpaceEffectPipboyScreen::PowerArmorPipboy };
 
 		// members
 		NiPointer<NiTexture> scanlineTexture; // B0
@@ -259,7 +259,7 @@ namespace RE
 		virtual bool IsActive() override;														   // 08
 		virtual bool UpdateParams(ImageSpaceEffectParam* a_param) override;						   // 09
 
-		inline static REL::Relocation<bool*> bDisable{ REL::RelocationID(1500590, 2713225) };
+		inline static REL::Relocation<bool*> bDisable{ ID::ImageSpaceEffectRadialBlur::Disable };
 	};
 	static_assert(sizeof(ImageSpaceEffectRadialBlur) == 0xB0);
 
@@ -278,7 +278,7 @@ namespace RE
 		virtual bool IsActive() override;														   // 08
 		virtual bool UpdateParams(ImageSpaceEffectParam* a_param) override;						   // 09
 
-		inline static REL::Relocation<std::uint32_t*> MaskS{ REL::ID(775377) };
+		inline static REL::Relocation<std::uint32_t*> MaskS{ ID::ImageSpaceEffectTemporalAA::MaskS };
 
 		// members
 		float previousInvTexSizeX;		  // B0

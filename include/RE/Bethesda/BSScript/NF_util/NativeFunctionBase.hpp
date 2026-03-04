@@ -79,7 +79,7 @@ namespace RE::BSScript::NF_util
 		CallResult Call(const BSTSmartPointer<Stack>& a_stack, ErrorLogger& a_errorLogger, Internal::VirtualMachine& a_vm, bool a_inScriptTasklet) const override // 0F
 		{
 			using func_t = decltype(&NativeFunctionBase::Call);
-			static REL::Relocation<func_t> func{ REL::RelocationID(571037, 2314780) };
+			static REL::Relocation<func_t> func{ ID::BSScript_Internal_NativeFunctionBase::Call };
 			return func(this, a_stack, a_errorLogger, a_vm, a_inScriptTasklet);
 		}
 

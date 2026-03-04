@@ -1511,7 +1511,7 @@ namespace RE::BSScript
 		inline BSTThreadScrapFunction<bool(BSScrapArray<Variable>&)> CreateThreadScrapFunction(FunctionArgsBase& a_args)
 		{
 			using func_t = decltype(&detail::CreateThreadScrapFunction);
-			static REL::Relocation<func_t> func{ REL::ID(69733) };
+			static REL::Relocation<func_t> func{ REL::ID(69733) }; // todo: investigate
 			return func(a_args);
 		}
 	}

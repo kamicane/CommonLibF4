@@ -117,42 +117,42 @@ namespace RE
 		void CopyMembers(bhkNPCollisionObject* from, NiCloningProcess& cp)
 		{
 			using func_t = decltype(&bhkNPCollisionObject::CopyMembers);
-			static REL::Relocation<func_t> func{ REL::ID(1558409) };
+			static REL::Relocation<func_t> func{ ID::bhkNPCollisionObject::CopyMembers };
 			func(this, from, cp);
 		}
 
 		static bhkNPCollisionObject* Getbhk(bhkWorld* world, hknpBodyId& bodyId)
 		{
 			using func_t = decltype(&bhkNPCollisionObject::Getbhk);
-			static REL::Relocation<func_t> func{ REL::ID(730034) };
+			static REL::Relocation<func_t> func{ ID::bhkNPCollisionObject::Getbhk };
 			return func(world, bodyId);
 		}
 
 		hknpShape* GetShape()
 		{
 			using func_t = decltype(&bhkNPCollisionObject::GetShape);
-			static REL::Relocation<func_t> func{ REL::ID(315427) };
+			static REL::Relocation<func_t> func{ ID::bhkNPCollisionObject::GetShape };
 			return func(this);
 		}
 
 		bool GetTransform(hkTransformf& transform)
 		{
 			using func_t = decltype(&bhkNPCollisionObject::GetTransform);
-			static REL::Relocation<func_t> func{ REL::ID(1508189) };
+			static REL::Relocation<func_t> func{ ID::bhkNPCollisionObject::GetTransform };
 			return func(this, transform);
 		}
 
 		void SetMotionType(hknpMotionPropertiesId::Preset type)
 		{
 			using func_t = decltype(&bhkNPCollisionObject::SetMotionType);
-			static REL::Relocation<func_t> func{ REL::ID(200912) };
+			static REL::Relocation<func_t> func{ ID::bhkNPCollisionObject::SetMotionType };
 			return func(this, type);
 		}
 
 		bool SetTransform(hkTransformf& transform)
 		{
 			using func_t = decltype(&bhkNPCollisionObject::SetTransform);
-			static REL::Relocation<func_t> func{ REL::ID(178085) };
+			static REL::Relocation<func_t> func{ ID::bhkNPCollisionObject::SetTransform };
 			return func(this, transform);
 		}
 

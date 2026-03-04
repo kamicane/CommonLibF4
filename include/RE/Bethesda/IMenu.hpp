@@ -180,7 +180,7 @@ namespace RE
 
 		[[nodiscard]] static FlatScreenModel* GetSingleton()
 		{
-			static REL::Relocation<FlatScreenModel**> singleton{ REL::ID(847741) };
+			static REL::Relocation<FlatScreenModel**> singleton{ ID::FlatScreenModel::Singleton };
 			return *singleton;
 		}
 
@@ -204,14 +204,14 @@ namespace RE
 
 		[[nodiscard]] static GameUIModel* GetSingleton()
 		{
-			static REL::Relocation<GameUIModel**> singleton{ REL::ID(17419) };
+			static REL::Relocation<GameUIModel**> singleton{ ID::GameUIModel::Singleton };
 			return *singleton;
 		}
 
 		void UpdateDataModels()
 		{
 			using func_t = decltype(&GameUIModel::UpdateDataModels);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1269653, 2220905) };
+			static REL::Relocation<func_t> func{ ID::GameUIModel::UpdateDataModels };
 			return func(this);
 		}
 	};
@@ -245,7 +245,7 @@ namespace RE
 		bool ShouldHandleEvent(const InputEvent* a_event) override // 01
 		{
 			using func_t = decltype(&IMenu::ShouldHandleEvent);
-			static REL::Relocation<func_t> func{ REL::ID(1241790) };
+			static REL::Relocation<func_t> func{ ID::IMenu::ShouldHandleEvent };
 			return func(this, a_event);
 		}
 
@@ -297,7 +297,7 @@ namespace RE
 		virtual bool PassesRenderConditionText(MENU_RENDER_CONTEXT a_reason, const BSFixedString& a_customRendererName) const // 07
 		{
 			using func_t = decltype(&IMenu::PassesRenderConditionText);
-			static REL::Relocation<func_t> func{ REL::RelocationID(937304, 2287379) };
+			static REL::Relocation<func_t> func{ ID::IMenu::PassesRenderConditionText };
 			return func(this, a_reason, a_customRendererName);
 		}
 
@@ -349,7 +349,7 @@ namespace RE
 		void OnSetSafeRect()
 		{
 			using func_t = decltype(&IMenu::OnSetSafeRect);
-			static REL::Relocation<func_t> func{ REL::ID(964859) };
+			static REL::Relocation<func_t> func{ ID::IMenu::OnSetSafeRect };
 			return func(this);
 		}
 
@@ -358,14 +358,14 @@ namespace RE
 		UI_MESSAGE_RESULTS ProcessScaleformEvent(Scaleform::GFx::Movie* a_movie, const IUIMessageData* a_data)
 		{
 			using func_t = decltype(&IMenu::ProcessScaleformEvent);
-			static REL::Relocation<func_t> func{ REL::ID(150211) };
+			static REL::Relocation<func_t> func{ ID::IMenu::ProcessScaleformEvent };
 			return func(this, a_movie, a_data);
 		}
 
 		void RefreshPlatform()
 		{
 			using func_t = decltype(&IMenu::RefreshPlatform);
-			static REL::Relocation<func_t> func{ REL::ID(1071829) };
+			static REL::Relocation<func_t> func{ ID::IMenu::RefreshPlatform };
 			return func(this);
 		}
 
@@ -493,14 +493,14 @@ namespace RE
 		Scaleform::GFx::Value* AcquireFlashObjectByMemberName(const Scaleform::GFx::Value& a_flashObject, const char* a_relativePathToMember)
 		{
 			using func_t = decltype(&BSGFxObject::AcquireFlashObjectByMemberName);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1172680, 2287014) };
+			static REL::Relocation<func_t> func{ ID::BSGFxObject::AcquireFlashObjectByMemberName };
 			return func(this, a_flashObject, a_relativePathToMember);
 		}
 
 		Scaleform::GFx::Value* AcquireFlashObjectByPath(const Scaleform::GFx::Movie& a_parentMovie, const char* a_absolutePathToMember)
 		{
 			using func_t = decltype(&BSGFxObject::AcquireFlashObjectByPath);
-			static REL::Relocation<func_t> func{ REL::ID(1065592) };
+			static REL::Relocation<func_t> func{ ID::BSGFxObject::AcquireFlashObjectByPath };
 			return func(this, a_parentMovie, a_absolutePathToMember);
 		}
 	};
@@ -550,7 +550,7 @@ namespace RE
 		void RemoveChild(const BSGFxDisplayObject& a_child) const
 		{
 			using func_t = decltype(&BSGFxDisplayObject::RemoveChild);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1229383, 2287327) };
+			static REL::Relocation<func_t> func{ ID::BSGFxDisplayObject::RemoveChild };
 			return func(this, a_child);
 		}
 
@@ -619,7 +619,7 @@ namespace RE
 		virtual BSEventNotifyControl ProcessEvent(const ApplyColorUpdateEvent& a_event, BSTEventSource<ApplyColorUpdateEvent>* a_source) override // 01
 		{
 			using func_t = decltype(&BSGFxShaderFXTarget::ProcessEvent);
-			static REL::Relocation<func_t> func{ REL::ID(848563) };
+			static REL::Relocation<func_t> func{ ID::BSGFxShaderFXTarget::ProcessEvent };
 			return func(this, a_event, a_source);
 		}
 
@@ -627,35 +627,35 @@ namespace RE
 		virtual void AppendShaderFXInfos(BSTArray<UIShaderFXInfo>& a_colorFXInfo, BSTArray<UIShaderFXInfo>& a_backgroundFXInfo) // 02
 		{
 			using func_t = decltype(&BSGFxShaderFXTarget::AppendShaderFXInfos);
-			static REL::Relocation<func_t> func{ REL::RelocationID(544646, 2287021) };
+			static REL::Relocation<func_t> func{ ID::BSGFxShaderFXTarget::AppendShaderFXInfos };
 			return func(this, a_colorFXInfo, a_backgroundFXInfo);
 		}
 
 		void CreateAndSetFiltersToColor(const NiColor& a_color, float a_brightness)
 		{
 			using func_t = void (BSGFxShaderFXTarget::*)(const NiColor&, float);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1487925, 2287028) };
+			static REL::Relocation<func_t> func{ ID::BSGFxShaderFXTarget::CreateAndSetFiltersToColor1 };
 			func(this, a_color, a_brightness);
 		}
 
 		void CreateAndSetFiltersToColor(std::uint8_t a_r, std::uint8_t a_g, std::uint8_t a_b, float a_brightness)
 		{
 			using func_t = void (BSGFxShaderFXTarget::*)(std::uint8_t, std::uint8_t, std::uint8_t, float);
-			static REL::Relocation<func_t> func{ REL::ID(783104) };
+			static REL::Relocation<func_t> func{ ID::BSGFxShaderFXTarget::CreateAndSetFiltersToColor2 };
 			func(this, a_r, a_g, a_b, a_brightness);
 		}
 
 		void CreateAndSetFiltersToHUD(HUDColorTypes a_colorType, float a_scale = 1.0)
 		{
 			using func_t = decltype(&BSGFxShaderFXTarget::CreateAndSetFiltersToHUD);
-			static REL::Relocation<func_t> func{ REL::RelocationID(876001, 2287027) };
+			static REL::Relocation<func_t> func{ ID::BSGFxShaderFXTarget::CreateAndSetFiltersToHUD };
 			func(this, a_colorType, a_scale);
 		}
 
 		void EnableShadedBackground(HUDColorTypes a_colorType, float a_scale = 1.0)
 		{
 			using func_t = decltype(&BSGFxShaderFXTarget::EnableShadedBackground);
-			static REL::Relocation<func_t> func{ REL::RelocationID(278402, 2287022) };
+			static REL::Relocation<func_t> func{ ID::BSGFxShaderFXTarget::EnableShadedBackground };
 			func(this, a_colorType, a_scale);
 		}
 
@@ -724,14 +724,14 @@ namespace RE
 		virtual void SetIsTopButtonBar(bool a_isTopButtonBar) override // 08
 		{
 			using func_t = decltype(&GameMenuBase::SetIsTopButtonBar);
-			static REL::Relocation<func_t> func{ REL::ID(1367353) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::SetIsTopButtonBar };
 			return func(this, a_isTopButtonBar);
 		}
 
 		virtual void OnMenuDisplayStateChanged() override // 0A
 		{
 			using func_t = decltype(&GameMenuBase::OnMenuDisplayStateChanged);
-			static REL::Relocation<func_t> func{ REL::ID(1274450) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::OnMenuDisplayStateChanged };
 			return func(this);
 		}
 
@@ -754,21 +754,21 @@ namespace RE
 		virtual bool CacheShaderFXQuadsForRenderer_Impl() override // 10
 		{
 			using func_t = decltype(&GameMenuBase::CacheShaderFXQuadsForRenderer_Impl);
-			static REL::Relocation<func_t> func{ REL::ID(863029) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::CacheShaderFXQuadsForRenderer_Impl };
 			return func(this);
 		}
 
 		virtual void TransferCachedShaderFXQuadsForRenderer(const BSFixedString& a_rendererName) override // 11
 		{
 			using func_t = decltype(&GameMenuBase::TransferCachedShaderFXQuadsForRenderer);
-			static REL::Relocation<func_t> func{ REL::ID(65166) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::TransferCachedShaderFXQuadsForRenderer };
 			return func(this, a_rendererName);
 		}
 
 		virtual void SetViewportRect(const NiRect<float>& a_viewportRect) override // 12
 		{
 			using func_t = decltype(&GameMenuBase::SetViewportRect);
-			static REL::Relocation<func_t> func{ REL::ID(1554334) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::SetViewportRect };
 			return func(this, a_viewportRect);
 		}
 
@@ -776,14 +776,14 @@ namespace RE
 		virtual void AppendShaderFXInfos(BSTAlignedArray<UIShaderFXInfo>& a_colorFXInfos, BSTAlignedArray<UIShaderFXInfo>& a_backgroundFXInfos) const // 13
 		{
 			using func_t = decltype(&GameMenuBase::AppendShaderFXInfos);
-			static REL::Relocation<func_t> func{ REL::ID(583584) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::AppendShaderFXInfos };
 			return func(this, a_colorFXInfos, a_backgroundFXInfos);
 		}
 
 		void SetUpButtonBar(BSGFxShaderFXTarget& a_parentObject, const char* a_buttonBarPath, HUDColorTypes a_colorType)
 		{
 			using func_t = decltype(&GameMenuBase::SetUpButtonBar);
-			static REL::Relocation<func_t> func{ REL::ID(531584) };
+			static REL::Relocation<func_t> func{ ID::GameMenuBase::SetUpButtonBar };
 			func(this, a_parentObject, a_buttonBarPath, a_colorType);
 		}
 
@@ -879,25 +879,25 @@ namespace RE
 		static void ExecuteCommand(const char* a_command)
 		{
 			using func_t = decltype(&Console::ExecuteCommand);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1061864, 2248537) };
+			static REL::Relocation<func_t> func{ ID::Console::ExecuteCommand };
 			return func(a_command);
 		}
 
 		[[nodiscard]] static decltype(auto) GetCurrentPickIndex()
 		{
-			static REL::Relocation<std::int32_t*> currentPickIndex{ REL::RelocationID(1407033, 2701382) };
+			static REL::Relocation<std::int32_t*> currentPickIndex{ ID::Console::GetCurrentPickIndex };
 			return *currentPickIndex;
 		}
 
 		[[nodiscard]] static decltype(auto) GetPickRef()
 		{
-			static REL::Relocation<ObjectRefHandle*> ref{ REL::RelocationID(170742, 2701395) };
+			static REL::Relocation<ObjectRefHandle*> ref{ ID::Console::GetPickRef };
 			return *ref;
 		}
 
 		[[nodiscard]] static decltype(auto) GetPickRefs()
 		{
-			static REL::Relocation<BSTArray<ObjectRefHandle>*> pickRefs{ REL::RelocationID(875116, 2701391) };
+			static REL::Relocation<BSTArray<ObjectRefHandle>*> pickRefs{ ID::Console::GetPickRefs };
 			return *pickRefs;
 		}
 
@@ -911,7 +911,7 @@ namespace RE
 		void SetCurrentPickREFR(stl::not_null<ObjectRefHandle*> a_refr)
 		{
 			using func_t = decltype(&Console::SetCurrentPickREFR);
-			static REL::Relocation<func_t> func{ REL::RelocationID(79066, 2248551) };
+			static REL::Relocation<func_t> func{ ID::Console::SetCurrentPickREFR };
 			return func(this, a_refr);
 		}
 
@@ -991,49 +991,49 @@ namespace RE
 		void Begin3D()
 		{
 			using func_t = decltype(&Inventory3DManager::Begin3D);
-			static REL::Relocation<func_t> func{ REL::ID(662659) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::Begin3D };
 			return func(this);
 		}
 
 		void ClearModel()
 		{
 			using func_t = decltype(&Inventory3DManager::ClearModel);
-			static REL::Relocation<func_t> func{ REL::ID(63218) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::ClearModel };
 			return func(this);
 		}
 
 		void DisableRendering(const BSFixedString& a_userID)
 		{
 			using func_t = decltype(&Inventory3DManager::DisableRendering);
-			static REL::Relocation<func_t> func{ REL::ID(255893) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::DisableRendering };
 			return func(this, a_userID);
 		}
 
 		void EnableRendering(const BSFixedString& a_userID)
 		{
 			using func_t = decltype(&Inventory3DManager::EnableRendering);
-			static REL::Relocation<func_t> func{ REL::ID(176578) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::EnableRendering };
 			return func(this, a_userID);
 		}
 
 		void End3D()
 		{
 			using func_t = decltype(&Inventory3DManager::End3D);
-			static REL::Relocation<func_t> func{ REL::ID(1512675) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::End3D };
 			return func(this);
 		}
 
 		void SetModelScale(float a_scale)
 		{
 			using func_t = decltype(&Inventory3DManager::SetModelScale);
-			static REL::Relocation<func_t> func{ REL::ID(1319701) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::SetModelScale };
 			return func(this, a_scale);
 		}
 
 		void SetModelScreenPosition(const NiPoint3& a_position, bool a_screenCoords)
 		{
 			using func_t = decltype(&Inventory3DManager::SetModelScreenPosition);
-			static REL::Relocation<func_t> func{ REL::ID(2967) };
+			static REL::Relocation<func_t> func{ ID::Inventory3DManager::SetModelScreenPosition };
 			return func(this, a_position, a_screenCoords);
 		}
 
@@ -1146,14 +1146,14 @@ namespace RE
 		void CheckAndSetItemForPlacement()
 		{
 			using func_t = decltype(&WorkshopMenu::CheckAndSetItemForPlacement);
-			static REL::Relocation<func_t> func{ REL::ID(1541862) };
+			static REL::Relocation<func_t> func{ ID::WorkshopMenu::CheckAndSetItemForPlacement };
 			return func(this);
 		}
 
 		void UpdateButtonText()
 		{
 			using func_t = decltype(&WorkshopMenu::UpdateButtonText);
-			static REL::Relocation<func_t> func{ REL::ID(1089189) };
+			static REL::Relocation<func_t> func{ ID::WorkshopMenu::UpdateButtonText };
 			return func(this);
 		}
 
@@ -1195,7 +1195,7 @@ namespace RE
 		BSEventNotifyControl ProcessEvent(const PipboyValueChangedEvent& a_event, BSTEventSource<PipboyValueChangedEvent>* a_source) override
 		{
 			using func_t = decltype(&PipboySubMenu::ProcessEvent);
-			static REL::Relocation<func_t> func{ REL::ID(893703) };
+			static REL::Relocation<func_t> func{ ID::PipboySubMenu::ProcessEvent };
 			return func(this, a_event, a_source);
 		}
 
@@ -1219,7 +1219,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyStatsMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(332518) };
+			static REL::Relocation<func_t> func{ ID::PipboyStatsMenu::UpdateData };
 			return func(this);
 		}
 
@@ -1239,7 +1239,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboySpecialMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(1426810) };
+			static REL::Relocation<func_t> func{ ID::PipboySpecialMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1256,7 +1256,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyPerksMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(783380) };
+			static REL::Relocation<func_t> func{ ID::PipboyPerksMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1273,7 +1273,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyInventoryMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::RelocationID(762897, 2224143) };
+			static REL::Relocation<func_t> func{ ID::PipboyInventoryMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1290,7 +1290,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyQuestMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(1495929) };
+			static REL::Relocation<func_t> func{ ID::PipboyQuestMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1307,7 +1307,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyWorkshopMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(1370368) };
+			static REL::Relocation<func_t> func{ ID::PipboyWorkshopMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1324,7 +1324,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyLogMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(672256) };
+			static REL::Relocation<func_t> func{ ID::PipboyLogMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1351,7 +1351,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyMapMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(92696) };
+			static REL::Relocation<func_t> func{ ID::PipboyMapMenu::UpdateData };
 			return func(this);
 		}
 
@@ -1377,7 +1377,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyRadioMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(713423) };
+			static REL::Relocation<func_t> func{ ID::PipboyRadioMenu::UpdateData };
 			return func(this);
 		}
 
@@ -1396,7 +1396,7 @@ namespace RE
 		void UpdateData() override
 		{
 			using func_t = decltype(&PipboyPlayerInfoMenu::UpdateData);
-			static REL::Relocation<func_t> func{ REL::ID(426990) };
+			static REL::Relocation<func_t> func{ ID::PipboyPlayerInfoMenu::UpdateData };
 			return func(this);
 		}
 	};
@@ -1513,7 +1513,7 @@ namespace RE
 			void IncrementSort()
 			{
 				using func_t = decltype(&ItemSorter::IncrementSort);
-				static REL::Relocation<func_t> func{ REL::ID(1307263) };
+				static REL::Relocation<func_t> func{ ID::ContainerMenuBase::ItemSorter::IncrementSort };
 				return func(this);
 			}
 
@@ -1601,7 +1601,7 @@ namespace RE
 		void TakeAllItems()
 		{
 			using func_t = decltype(&ContainerMenu::TakeAllItems);
-			static REL::Relocation<func_t> func{ REL::ID(1323703) };
+			static REL::Relocation<func_t> func{ ID::ContainerMenu::TakeAllItems };
 			return func(this);
 		}
 
@@ -1675,21 +1675,21 @@ namespace RE
 		void ClearTradingData()
 		{
 			using func_t = decltype(&BarterMenu::ClearTradingData);
-			static REL::Relocation<func_t> func{ REL::ID(1112285) };
+			static REL::Relocation<func_t> func{ ID::BarterMenu::ClearTradingData };
 			return func(this);
 		}
 
 		void CompleteTrade()
 		{
 			using func_t = decltype(&BarterMenu::CompleteTrade);
-			static REL::Relocation<func_t> func{ REL::ID(379932) };
+			static REL::Relocation<func_t> func{ ID::BarterMenu::CompleteTrade };
 			return func(this);
 		}
 
 		[[nodiscard]] std::int64_t GetCapsOwedByPlayer()
 		{
 			using func_t = decltype(&BarterMenu::GetCapsOwedByPlayer);
-			static REL::Relocation<func_t> func{ REL::ID(672405) };
+			static REL::Relocation<func_t> func{ ID::BarterMenu::GetCapsOwedByPlayer };
 			return func(this);
 		}
 
@@ -1722,7 +1722,7 @@ namespace RE
 		void ShowMessage()
 		{
 			using func_t = decltype(&MessageBoxMenu::ShowMessage);
-			static REL::Relocation<func_t> func{ REL::ID(442479) };
+			static REL::Relocation<func_t> func{ ID::MessageBoxMenu::ShowMessage };
 			return func(this);
 		}
 
@@ -2106,21 +2106,21 @@ namespace RE
 		void BuildWeaponScrappingArray()
 		{
 			using func_t = decltype(&ExamineMenu::BuildWeaponScrappingArray);
-			static REL::Relocation<func_t> func{ REL::ID(646841) };
+			static REL::Relocation<func_t> func{ ID::ExamineMenu::BuildWeaponScrappingArray };
 			return func(this);
 		}
 
 		[[nodiscard]] std::uint32_t GetSelectedIndex()
 		{
 			using func_t = decltype(&ExamineMenu::GetSelectedIndex);
-			static REL::Relocation<func_t> func{ REL::RelocationID(776503, 2223022) };
+			static REL::Relocation<func_t> func{ ID::ExamineMenu::GetSelectedIndex };
 			return func(this);
 		}
 
 		void ShowConfirmMenu(ExamineConfirmMenu::InitData* a_data, ExamineConfirmMenu::ICallback* a_callback)
 		{
 			using func_t = decltype(&ExamineMenu::ShowConfirmMenu);
-			static REL::Relocation<func_t> func{ REL::RelocationID(443081, 2223081) };
+			static REL::Relocation<func_t> func{ ID::ExamineMenu::ShowConfirmMenu };
 			return func(this, a_data, a_callback);
 		}
 
@@ -2270,7 +2270,7 @@ namespace RE
 		static void OpenLockpickingMenu(TESObjectREFR* a_lockedRef)
 		{
 			using func_t = decltype(&LockpickingMenu::OpenLockpickingMenu);
-			static REL::Relocation<func_t> func{ REL::ID(129892) };
+			static REL::Relocation<func_t> func{ ID::LockpickingMenu::OpenLockpickingMenu };
 			return func(a_lockedRef);
 		}
 
@@ -2357,14 +2357,14 @@ namespace RE
 		static void OnEnterFurniture(ObjectRefHandle a_handle)
 		{
 			using func_t = decltype(&SitWaitMenu::OnEnterFurniture);
-			static REL::Relocation<func_t> func{ REL::ID(562238) };
+			static REL::Relocation<func_t> func{ ID::SitWaitMenu::OnEnterFurniture };
 			return func(a_handle);
 		}
 
 		static void OnExitFurniture()
 		{
 			using func_t = decltype(&SitWaitMenu::OnExitFurniture);
-			static REL::Relocation<func_t> func{ REL::ID(454795) };
+			static REL::Relocation<func_t> func{ ID::SitWaitMenu::OnExitFurniture };
 			return func();
 		}
 
@@ -2503,14 +2503,14 @@ namespace RE
 		static void ShowHolotapeInPipboy(const BSFixedString& a_holotapePath)
 		{
 			using func_t = decltype(&HolotapeMenu::ShowHolotapeInPipboy);
-			static REL::Relocation<func_t> func{ REL::ID(217953) };
+			static REL::Relocation<func_t> func{ ID::HolotapeMenu::ShowHolotapeInPipboy };
 			return func(a_holotapePath);
 		}
 
 		static void ShowHolotapeInTerminal(const BSFixedString& a_holotapePath)
 		{
 			using func_t = decltype(&HolotapeMenu::ShowHolotapeInTerminal);
-			static REL::Relocation<func_t> func{ REL::ID(390509) };
+			static REL::Relocation<func_t> func{ ID::HolotapeMenu::ShowHolotapeInTerminal };
 			return func(a_holotapePath);
 		}
 

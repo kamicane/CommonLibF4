@@ -28,7 +28,7 @@ namespace RE::BSScript
 	void ObjectTypeInfo::Dtor()
 	{
 		using func_t = decltype(&ObjectTypeInfo::Dtor);
-		static REL::Relocation<func_t> func{ REL::ID(1047917) };
+		static REL::Relocation<func_t> func{ ID::BSScript_ObjectTypeInfo::dtor };
 		return func(this);
 	}
 }

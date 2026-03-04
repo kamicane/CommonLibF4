@@ -709,6 +709,7 @@ namespace REL
 
 #include "REX/PS4.hpp"
 
+#include "RE/IDs.hpp"
 #include "RE/NiRTTI_IDs.hpp"
 #include "RE/RTTI_IDs.hpp"
 #include "RE/VTABLE_IDs.hpp"

@@ -169,35 +169,35 @@ namespace RE::BSResource::Archive2
 		ErrorCode DoOpen() override // 01
 		{
 			using func_t = decltype(&ReaderStream::DoOpen);
-			static REL::Relocation<func_t> func{ REL::ID(762048) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoOpen };
 			return func(this);
 		}
 
 		void DoClose() override // 02
 		{
 			using func_t = decltype(&ReaderStream::DoClose);
-			static REL::Relocation<func_t> func{ REL::ID(109149) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoClose };
 			return func(this);
 		}
 
 		std::uint64_t DoGetKey() const override // 03
 		{
 			using func_t = decltype(&ReaderStream::DoGetKey);
-			static REL::Relocation<func_t> func{ REL::ID(772817) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoGetKey };
 			return func(this);
 		}
 
 		void DoClone(BSTSmartPointer<Stream>& a_result) const override // 05
 		{
 			using func_t = decltype(&ReaderStream::DoClone);
-			static REL::Relocation<func_t> func{ REL::ID(855081) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoClone };
 			return func(this, a_result);
 		}
 
 		ErrorCode DoRead(void* a_buffer, std::uint64_t a_bytes, std::uint64_t& a_read) const override // 06
 		{
 			using func_t = decltype(&ReaderStream::DoRead);
-			static REL::Relocation<func_t> func{ REL::ID(1359347) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoRead };
 			return func(this, a_buffer, a_bytes, a_read);
 		}
 
@@ -210,14 +210,14 @@ namespace RE::BSResource::Archive2
 		ErrorCode DoSeek(std::int64_t a_offset, SeekMode a_whence, std::uint64_t& a_pos) const override // 09
 		{
 			using func_t = decltype(&ReaderStream::DoSeek);
-			static REL::Relocation<func_t> func{ REL::ID(1000164) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoSeek };
 			return func(this, a_offset, a_whence, a_pos);
 		}
 
 		ErrorCode DoPrefetchAll(std::uint32_t a_priority) const override // 0E
 		{
 			using func_t = decltype(&ReaderStream::DoPrefetchAll);
-			static REL::Relocation<func_t> func{ REL::ID(1518821) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoPrefetchAll };
 			return func(this, a_priority);
 		}
 
@@ -230,7 +230,7 @@ namespace RE::BSResource::Archive2
 		ErrorCode DoCreateAsync(BSTSmartPointer<AsyncStream>& a_result) const override // 10
 		{
 			using func_t = decltype(&ReaderStream::DoCreateAsync);
-			static REL::Relocation<func_t> func{ REL::ID(893405) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_ReaderStream::DoCreateAsync };
 			return func(this, a_result);
 		}
 
@@ -273,14 +273,14 @@ namespace RE::BSResource::Archive2
 		ErrorCode DoOpen() override // 01
 		{
 			using func_t = decltype(&AsyncReaderStream::DoOpen);
-			static REL::Relocation<func_t> func{ REL::ID(1401160) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_AsyncReaderStream::DoOpen };
 			return func(this);
 		}
 
 		void DoClose() override // 02
 		{
 			using func_t = decltype(&AsyncReaderStream::DoClose);
-			static REL::Relocation<func_t> func{ REL::ID(883012) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_AsyncReaderStream::DoClose };
 			return func(this);
 		}
 
@@ -288,7 +288,7 @@ namespace RE::BSResource::Archive2
 			BSTSmartPointer<AsyncStream>& a_result) const override // 05
 		{
 			using func_t = decltype(&AsyncReaderStream::DoClone);
-			static REL::Relocation<func_t> func{ REL::ID(803750) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_AsyncReaderStream::DoClone };
 			return func(this, a_result);
 		}
 
@@ -298,7 +298,7 @@ namespace RE::BSResource::Archive2
 			std::uint64_t a_offset) const override // 06
 		{
 			using func_t = decltype(&AsyncReaderStream::DoStartRead);
-			static REL::Relocation<func_t> func{ REL::ID(1215072) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_AsyncReaderStream::DoStartRead };
 			return func(this, a_buffer, a_bytes, a_offset);
 		}
 
@@ -308,7 +308,7 @@ namespace RE::BSResource::Archive2
 			std::uint64_t a_offset) const override // 07
 		{
 			using func_t = decltype(&AsyncReaderStream::DoStartPacketAlignedBufferedRead);
-			static REL::Relocation<func_t> func{ REL::ID(603387) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_AsyncReaderStream::DoStartPacketAlignedBufferedRead };
 			return func(this, a_buffer, a_bytes, a_offset);
 		}
 
@@ -331,7 +331,7 @@ namespace RE::BSResource::Archive2
 			bool a_block) override // 0B
 		{
 			using func_t = decltype(&AsyncReaderStream::DoWait);
-			static REL::Relocation<func_t> func{ REL::RelocationID(244066, 2269399) };
+			static REL::Relocation<func_t> func{ RE::ID::BSResource_Archive2_AsyncReaderStream::DoWait };
 			return func(this, a_transferred, a_block);
 		}
 

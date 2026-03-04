@@ -22,7 +22,7 @@ namespace REL
 			Unknown = 0,
 
 			/**
-			 * The FALLOUT runtime is a post-Next Generation Update FALLOUT release (version 1.10.980 and later).
+			 * The FALLOUT runtime is a post-Next Generation Update FALLOUT release (version 1.10.980).
 			 */
 			NG = 1 << 0,
 
@@ -32,9 +32,9 @@ namespace REL
 			F4 = 1 << 1,
 
 			/**
-			 * The FALLOUT runtime is FALLOUT VR.
+			 * The FALLOUT runtime is FALLOUT Anniversary Edition.
 			 */
-			VR = 1 << 2
+			AE = 1 << 2
 		};
 		[[nodiscard]] static Module& get()
 		{
@@ -61,12 +61,12 @@ namespace REL
 		 */
 		[[nodiscard]] static FALLOUT_REL Runtime GetRuntime() noexcept
 		{
-#if (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_VR))
+#if (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_AE))
 			return Runtime::F4;
-#elif (!defined(ENABLE_FALLOUT_F4) && !defined(ENABLE_FALLOUT_VR))
+#elif (!defined(ENABLE_FALLOUT_F4) && !defined(ENABLE_FALLOUT_AE))
 			return Runtime::NG;
 #elif (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4))
-			return Runtime::VR;
+			return Runtime::AE;
 #else
 			return get()._runtime;
 #endif
@@ -89,17 +89,11 @@ namespace REL
 		}
 
 		/**
-		 * Returns whether the current FALLOUT runtime is a FALLOUT VR release.
+		 * Returns whether the current FALLOUT runtime is Anniversary Edition Fallout release.
 		 */
-		[[nodiscard]] static FALLOUT_REL_VR bool IsVR() noexcept
+		[[nodiscard]] static FALLOUT_REL bool IsAE() noexcept
 		{
-#if !defined(ENABLE_FALLOUT_VR)
-			return false;
-#elif !defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4)
-			return true;
-#else
-			return GetRuntime() == Runtime::VR;
-#endif
+			return GetRuntime() == Runtime::AE;
 		}
 
 	private:
@@ -111,8 +105,7 @@ namespace REL
 
 		static constexpr auto ENVIRONMENT = L"F4SE_RUNTIME"sv;
 
-		static constexpr std::array<std::wstring_view, 2> RUNTIMES{ { L"Fallout4VR.exe",
-			L"Fallout4.exe" } };
+		static constexpr std::array<std::wstring_view, 1> RUNTIMES{ { L"Fallout4.exe" } };
 
 		static constexpr std::array SEGMENTS{
 			".text"sv,

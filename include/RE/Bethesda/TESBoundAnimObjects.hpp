@@ -458,7 +458,7 @@ namespace RE
 		[[nodiscard]] TESContainer* GetContainer()
 		{
 			using func_t = decltype(&TESFurniture::GetContainer);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1049933, 2198043) };
+			static REL::Relocation<func_t> func{ ID::TESFurniture::GetContainer };
 			return func(this);
 		}
 
@@ -588,14 +588,14 @@ namespace RE
 
 		[[nodiscard]] static BSTHashMap<const TESNPC*, BSTArray<BGSHeadPart*>>& GetAlternateHeadPartListMap()
 		{
-			static REL::Relocation<BSTHashMap<const TESNPC*, BSTArray<BGSHeadPart*>>*> map{ REL::RelocationID(1306546, 2662368), -0x8 };
+			static REL::Relocation<BSTHashMap<const TESNPC*, BSTArray<BGSHeadPart*>>*> map{ ID::TESNPC::AlternateHeadPartListMap, -0x8 };
 			return *map;
 		}
 
 		[[nodiscard]] static TESNPC* GetDefaultNPC(TESNPC* npc)
 		{
 			using func_t = decltype(&TESNPC::GetDefaultNPC);
-			static REL::Relocation<func_t> func{ REL::ID(1073775) };
+			static REL::Relocation<func_t> func{ ID::TESNPC::GetDefaultNPC };
 			return func(npc);
 		}
 
@@ -646,7 +646,7 @@ namespace RE
 		[[nodiscard]] SEX GetSex() noexcept
 		{
 			using func_t = decltype(&TESNPC::GetSex);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1257181, 2207107) };
+			static REL::Relocation<func_t> func{ ID::TESNPC::GetSex };
 			return func(this);
 		}
 
@@ -677,7 +677,7 @@ namespace RE
 		float GetFacialBoneMorphIntensity()
 		{
 			using func_t = decltype(&TESNPC::GetFacialBoneMorphIntensity);
-			static REL::Relocation<func_t> func{ REL::RelocationID(272217, 2207416) };
+			static REL::Relocation<func_t> func{ ID::TESNPC::GetFacialBoneMorphIntensity };
 			return func(this);
 		}
 
@@ -804,21 +804,21 @@ namespace RE
 		LOCK_LEVEL GetHackDifficultyLockLevel(TESObjectREFR* a_refr)
 		{
 			using func_t = decltype(&BGSTerminal::GetHackDifficultyLockLevel);
-			static REL::Relocation<func_t> func{ REL::RelocationID(537273, 2197777) };
+			static REL::Relocation<func_t> func{ ID::BGSTerminal::GetHackDifficultyLockLevel };
 			return func(this, a_refr);
 		}
 
 		static bool IsTerminalRefInUse(TESObjectREFR* a_refr)
 		{
 			using func_t = decltype(&BGSTerminal::IsTerminalRefInUse);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1093565, 2197779) };
+			static REL::Relocation<func_t> func{ ID::BGSTerminal::IsTerminalRefInUse };
 			return func(a_refr);
 		}
 
 		static void Show(TESObjectREFR* a_refr)
 		{
 			using func_t = decltype(&BGSTerminal::Show);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1069012, 2197776) };
+			static REL::Relocation<func_t> func{ ID::BGSTerminal::Show };
 			return func(a_refr);
 		}
 

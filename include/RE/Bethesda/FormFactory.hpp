@@ -36,7 +36,7 @@ namespace RE
 			-> std::span<IFormFactory*, std::to_underlying(ENUM_FORMTYPE::kTotal)>
 		{
 			constexpr auto len = std::to_underlying(ENUM_FORMTYPE::kTotal);
-			static REL::Relocation<IFormFactory*(*)[len]> factories{ REL::RelocationID(228366, 2689177) };
+			static REL::Relocation<IFormFactory*(*)[len]> factories{ ID::IFormFactory::Factories };
 			return { *factories };
 		}
 	};

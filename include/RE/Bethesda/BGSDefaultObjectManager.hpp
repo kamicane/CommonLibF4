@@ -430,7 +430,7 @@ namespace RE
 
 	[[nodiscard]] inline std::span<DEFAULT_OBJECT_DATA, 394> GetDefaultObjectData()
 	{
-		static REL::Relocation<DEFAULT_OBJECT_DATA(*)[394]> data{ REL::ID(838886) };
+		static REL::Relocation<DEFAULT_OBJECT_DATA(*)[394]> data{ RE::ID::DEFAULT_OBJECT_DATA::GetDefaultObjectData };
 		return { *data };
 	}
 
@@ -446,7 +446,7 @@ namespace RE
 		[[nodiscard]] static BGSDefaultObjectManager* GetSingleton()
 		{
 			using func_t = decltype(&BGSDefaultObjectManager::GetSingleton);
-			static REL::Relocation<func_t> func{ REL::ID(484974) };
+			static REL::Relocation<func_t> func{ ID::BGSDefaultObjectManager::Singleton };
 			return func();
 		}
 
@@ -487,7 +487,7 @@ namespace RE
 
 		[[nodiscard]] static BSTArray<BGSDefaultObject*>* GetSingleton()
 		{
-			static REL::Relocation<BSTArray<BGSDefaultObject*>**> singleton{ REL::RelocationID(561749, 2690473) };
+			static REL::Relocation<BSTArray<BGSDefaultObject*>**> singleton{ ID::BGSDefaultObject::Singleton };
 			return *singleton;
 		}
 
@@ -506,7 +506,7 @@ namespace RE
 		BGSDefaultObject* ctor(const char* a_name, ENUM_FORMTYPE a_formType, const char* a_description)
 		{
 			using func_t = decltype(&BGSDefaultObject::ctor);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1144014, 2197003) };
+			static REL::Relocation<func_t> func{ ID::BGSDefaultObject::ctor };
 			return func(this, a_name, a_formType, a_description);
 		}
 	};

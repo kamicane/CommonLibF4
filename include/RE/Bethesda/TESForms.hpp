@@ -693,7 +693,7 @@ namespace RE
 			std::int32_t operator()(const TESForm* a_arg1, const TESForm* a_arg2)
 			{
 				using func_t = decltype(&FormSortFunc::operator());
-				static REL::Relocation<func_t> func{ REL::ID(705530) };
+				static REL::Relocation<func_t> func{ ID::TESForm::FormSortFunc };
 				return func(this, a_arg1, a_arg2);
 			}
 		};
@@ -792,7 +792,7 @@ namespace RE
 		static void AddCompileIndex(std::uint32_t& a_id, TESFile* a_file)
 		{
 			using func_t = decltype(&TESForm::AddCompileIndex);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1315637, 2193152) };
+			static REL::Relocation<func_t> func{ ID::TESForm::AddCompileIndex };
 			return func(a_id, a_file);
 		}
 
@@ -801,8 +801,8 @@ namespace RE
 				BSTHashMap<std::uint32_t, TESForm*>*,
 				std::reference_wrapper<BSReadWriteLock>>
 		{
-			static REL::Relocation<BSTHashMap<std::uint32_t, TESForm*>**> allForms{ REL::RelocationID(422985, 2689178) };
-			static REL::Relocation<BSReadWriteLock*> allFormsMapLock{ REL::RelocationID(691815, 2689189) };
+			static REL::Relocation<BSTHashMap<std::uint32_t, TESForm*>**> allForms{ ID::TESForm::AllForms };
+			static REL::Relocation<BSReadWriteLock*> allFormsMapLock{ ID::TESForm::AllFormsMapLock };
 			return { *allForms, *allFormsMapLock };
 		}
 
@@ -811,15 +811,15 @@ namespace RE
 				BSTHashMap<BSFixedString, TESForm*>*,
 				std::reference_wrapper<BSReadWriteLock>>
 		{
-			static REL::Relocation<BSTHashMap<BSFixedString, TESForm*>**> allFormsByEditorID{ REL::RelocationID(642758, 2689179) };
-			static REL::Relocation<BSReadWriteLock*> allFormsEditorIDMapLock{ REL::RelocationID(910917, 2689190) };
+			static REL::Relocation<BSTHashMap<BSFixedString, TESForm*>**> allFormsByEditorID{ ID::TESForm::AllFormsByEditorID };
+			static REL::Relocation<BSReadWriteLock*> allFormsEditorIDMapLock{ ID::TESForm::AllFormsEditorIDMapLock };
 			return { *allFormsByEditorID, *allFormsEditorIDMapLock };
 		}
 
 		[[nodiscard]] TESFile* GetFile(std::int32_t a_index = -1) const
 		{
 			using func_t = decltype(&TESForm::GetFile);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1376557, 2193103) };
+			static REL::Relocation<func_t> func{ ID::TESForm::GetFile };
 			return func(this, a_index);
 		}
 
@@ -859,14 +859,14 @@ namespace RE
 
 		[[nodiscard]] static std::span<FORM_ENUM_STRING, 159> GetFormEnumString()
 		{
-			static REL::Relocation<FORM_ENUM_STRING(*)[159]> functions{ REL::RelocationID(1309967, 1309967) };
+			static REL::Relocation<FORM_ENUM_STRING(*)[159]> functions{ ID::TESForm::GetFormEnumString };
 			return { *functions };
 		}
 
 		[[nodiscard]] static ENUM_FORMTYPE GetFormTypeFromString(const char* a_formTypeString)
 		{
 			using func_t = decltype(&TESForm::GetFormTypeFromString);
-			static REL::Relocation<func_t> func{ REL::RelocationID(565203, 2193108) };
+			static REL::Relocation<func_t> func{ ID::TESForm::GetFormTypeFromString };
 			return func(a_formTypeString);
 		}
 
@@ -966,7 +966,7 @@ namespace RE
 		void SetTemporary()
 		{
 			using func_t = decltype(&TESForm::SetTemporary);
-			static REL::Relocation<func_t> func{ REL::RelocationID(482454, 2193125) };
+			static REL::Relocation<func_t> func{ ID::TESForm::SetTemporary };
 			return func(this);
 		}
 
@@ -1727,63 +1727,63 @@ namespace RE
 		[[nodiscard]] bhkWorld* GetbhkWorld() const
 		{
 			using func_t = decltype(&TESObjectCELL::GetbhkWorld);
-			static REL::Relocation<func_t> func{ REL::ID(1326073) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetbhkWorld };
 			return func(this);
 		}
 
 		[[nodiscard]] bool GetCantWaitHere()
 		{
 			using func_t = decltype(&TESObjectCELL::GetCantWaitHere);
-			static REL::Relocation<func_t> func{ REL::RelocationID(376940, 2200287) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetCantWaitHere };
 			return func(this);
 		}
 
 		[[nodiscard]] std::int32_t GetDataX()
 		{
 			using func_t = decltype(&TESObjectCELL::GetDataX);
-			static REL::Relocation<func_t> func{ REL::RelocationID(445210, 2200213) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetDataX };
 			return func(this);
 		}
 
 		[[nodiscard]] std::int32_t GetDataY()
 		{
 			using func_t = decltype(&TESObjectCELL::GetDataY);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1322816, 2200214) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetDataY };
 			return func(this);
 		}
 
 		[[nodiscard]] BGSEncounterZone* GetEncounterZone() const
 		{
 			using func_t = decltype(&TESObjectCELL::GetEncounterZone);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1414637, 2200242) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetEncounterZone };
 			return func(this);
 		}
 
 		[[nodiscard]] BGSLocation* GetLocation() const
 		{
 			using func_t = decltype(&TESObjectCELL::GetLocation);
-			static REL::Relocation<func_t> func{ REL::RelocationID(868663, 2200179) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetLocation };
 			return func(this);
 		}
 
 		[[nodiscard]] TESForm* GetOwner()
 		{
 			using func_t = decltype(&TESObjectCELL::GetOwner);
-			static REL::Relocation<func_t> func{ REL::ID(910422) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetOwner };
 			return func(this);
 		}
 
 		[[nodiscard]] TESRegionList* GetRegionList(bool a_createIfMissing)
 		{
 			using func_t = decltype(&TESObjectCELL::GetRegionList);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1565031, 2200265) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::GetRegionList };
 			return func(this, a_createIfMissing);
 		}
 
 		[[nodiscard]] NiAVObject* Pick(bhkPickData& pd)
 		{
 			using func_t = decltype(&TESObjectCELL::Pick);
-			static REL::Relocation<func_t> func{ REL::ID(434717) };
+			static REL::Relocation<func_t> func{ ID::TESObjectCELL::Pick };
 			return func(this, pd);
 		}
 
@@ -1980,7 +1980,7 @@ namespace RE
 		const char* GetResponseText()
 		{
 			using func_t = decltype(&TESResponse::GetResponseText);
-			static REL::Relocation<func_t> func{ REL::RelocationID(0, 2208288) };
+			static REL::Relocation<func_t> func{ ID::TESResponse::GetResponseText };
 			return func(this);
 		}
 
@@ -2045,21 +2045,21 @@ namespace RE
 		TESTopicInfo* GetParentInfoGroup()
 		{
 			using func_t = decltype(&TESTopicInfo::GetParentInfoGroup);
-			static REL::Relocation<func_t> func{ REL::RelocationID(163538, 2208435) };
+			static REL::Relocation<func_t> func{ ID::TESTopicInfo::GetParentInfoGroup };
 			return func(this);
 		}
 
 		CHARISMA_CHALLENGE_DIFFICULTY GetSpeechChallengeLevel()
 		{
 			using func_t = decltype(&TESTopicInfo::GetSpeechChallengeLevel);
-			static REL::Relocation<func_t> func{ REL::RelocationID(0, 2208441) };
+			static REL::Relocation<func_t> func{ ID::TESTopicInfo::GetChallengeLevel };
 			return func(this);
 		}
 
 		CHARISMA_CHALLENGE_SUCCESS GetSuccessLevel()
 		{
 			using func_t = decltype(&TESTopicInfo::GetSuccessLevel);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1023955, 2208444) };
+			static REL::Relocation<func_t> func{ ID::TESTopicInfo::GetSuccessLevel };
 			return func(this);
 		}
 
@@ -3016,14 +3016,14 @@ namespace RE
 		void AddButton(MESSAGEBOX_BUTTON* btn)
 		{
 			using func_t = decltype(&BGSMessage::AddButton);
-			static REL::Relocation<func_t> func{ REL::ID(236744) };
+			static REL::Relocation<func_t> func{ ID::BGSMessage::AddButton };
 			return func(this, btn);
 		}
 
 		std::uint32_t GetConvertedDescription(BSFixedString& a_result)
 		{
 			using func_t = decltype(&BGSMessage::GetConvertedDescription);
-			static REL::Relocation<func_t> func{ REL::ID(8331) };
+			static REL::Relocation<func_t> func{ ID::BGSMessage::GetConvertedDescription };
 			return func(this, a_result);
 		}
 

@@ -6,10 +6,10 @@ namespace RE
 {
 	void MenuCursor::ConstrainForPipboy()
 	{
-		static REL::Relocation<Setting*> tlx{ REL::ID(60674) };
-		static REL::Relocation<Setting*> tly{ REL::ID(719279) };
-		static REL::Relocation<Setting*> width{ REL::ID(1376729) };
-		static REL::Relocation<Setting*> height{ REL::ID(452591) };
+		static REL::Relocation<Setting*> tlx{ ID::MenuCursor::PipboyConstraintTLX };
+		static REL::Relocation<Setting*> tly{ ID::MenuCursor::PipboyConstraintTLY };
+		static REL::Relocation<Setting*> width{ ID::MenuCursor::PipboyConstraintWidth };
+		static REL::Relocation<Setting*> height{ ID::MenuCursor::PipboyConstraintHeight };
 		SetCursorConstraintsRaw(
 			tlx->GetUInt(),
 			tly->GetUInt(),
@@ -19,10 +19,10 @@ namespace RE
 
 	void MenuCursor::ConstrainForPipboyPA()
 	{
-		static REL::Relocation<Setting*> tlx{ REL::ID(1110986) };
-		static REL::Relocation<Setting*> tly{ REL::ID(187113) };
-		static REL::Relocation<Setting*> width{ REL::ID(844985) };
-		static REL::Relocation<Setting*> height{ REL::ID(1503497) };
+		static REL::Relocation<Setting*> tlx{ ID::MenuCursor::PipboyConstraintTLX_PowerArmor };
+		static REL::Relocation<Setting*> tly{ ID::MenuCursor::PipboyConstraintTLY_PowerArmor };
+		static REL::Relocation<Setting*> width{ ID::MenuCursor::PipboyConstraintWidth_PowerArmor };
+		static REL::Relocation<Setting*> height{ ID::MenuCursor::PipboyConstraintHeight_PowerArmor };
 		SetCursorConstraintsRaw(
 			tlx->GetUInt(),
 			tly->GetUInt(),

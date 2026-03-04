@@ -173,7 +173,7 @@ namespace RE
 		bool FindAndWriteStackData(StackDataCompareFunctor& a_compareFunc, StackDataWriteFunctor& a_writeFunc, bool a_manualMerge, ObjectRefHandle a_owner)
 		{
 			using func_t = decltype(&BGSInventoryItem::FindAndWriteStackData);
-			static REL::Relocation<func_t> func{ REL::RelocationID(770140, 2194123) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryItem::FindAndWriteStackData };
 			return func(this, a_compareFunc, a_writeFunc, a_manualMerge, a_owner);
 		}
 
@@ -191,35 +191,35 @@ namespace RE
 		[[nodiscard]] const char* GetDisplayFullName(std::uint32_t a_stackID) const
 		{
 			using func_t = decltype(&BGSInventoryItem::GetDisplayFullName);
-			static REL::Relocation<func_t> func{ REL::RelocationID(277641, 2194079) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryItem::GetDisplayFullName1 };
 			return func(this, a_stackID);
 		}
 
 		[[nodiscard]] TBO_InstanceData* GetInstanceData(std::uint32_t a_stackID) const
 		{
 			using func_t = decltype(&BGSInventoryItem::GetInstanceData);
-			static REL::Relocation<func_t> func{ REL::RelocationID(491493, 2194072) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryItem::GetInstanceData };
 			return func(this, a_stackID);
 		}
 
 		[[nodiscard]] std::int32_t GetInventoryValue(std::uint32_t a_stackID, bool a_scale) const
 		{
 			using func_t = decltype(&BGSInventoryItem::GetInventoryValue);
-			static REL::Relocation<func_t> func{ REL::RelocationID(430292, 2194099) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryItem::GetInventoryValue };
 			return func(this, a_stackID, a_scale);
 		}
 
 		bool GetStackCount()
 		{
 			using func_t = decltype(&BGSInventoryItem::GetStackCount);
-			static REL::Relocation<func_t> func{ REL::ID(82050) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryItem::GetStackCount };
 			return func(this);
 		}
 
 		bool IsQuestObject(std::int32_t a_stackIterations)
 		{
 			using func_t = decltype(&BGSInventoryItem::IsQuestObject);
-			static REL::Relocation<func_t> func{ REL::ID(823447) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryItem::IsQuestObject };
 			return func(this, a_stackIterations);
 		}
 
@@ -240,7 +240,7 @@ namespace RE
 		virtual void WriteDataImpl(TESBoundObject& a_baseObj, BGSInventoryItem::Stack& a_stack) override // 01
 		{
 			using func_t = decltype(&ApplyChangesFunctor::WriteDataImpl);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1291190, 2223194) };
+			static REL::Relocation<func_t> func{ ID::ApplyChangesFunctor::WriteDataImpl };
 			return func(this, a_baseObj, a_stack);
 		}
 

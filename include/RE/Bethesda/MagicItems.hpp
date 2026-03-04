@@ -31,7 +31,7 @@ namespace RE
 		void GetDescription(BSString* a_buffer, const char* a_beginTagFormat, const char* a_endTagFormat, float a_magnitude, float a_duration)
 		{
 			using func_t = decltype(&EffectItem::GetDescription);
-			static REL::Relocation<func_t> func{ REL::RelocationID(949839, 2189612) };
+			static REL::Relocation<func_t> func{ ID::EffectItem::GetDescription };
 			return func(this, a_buffer, a_beginTagFormat, a_endTagFormat, a_magnitude, a_duration);
 		}
 
@@ -215,7 +215,7 @@ namespace RE
 		bool Cast(TESObjectREFR* caster, TESObjectREFR* target, Actor* anyActor, BSScript::IVirtualMachine* vm)
 		{
 			using func_t = decltype(&SpellItem::Cast);
-			static REL::Relocation<func_t> func{ REL::ID(1511987) };
+			static REL::Relocation<func_t> func{ REL::ID(1511987) }; // skip
 			return func(this, caster, target, anyActor, vm);
 		}
 

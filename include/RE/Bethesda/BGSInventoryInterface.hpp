@@ -61,14 +61,14 @@ namespace RE
 
 		[[nodiscard]] static BGSInventoryInterface* GetSingleton()
 		{
-			static REL::Relocation<BGSInventoryInterface**> singleton{ REL::RelocationID(501899, 2689299) };
+			static REL::Relocation<BGSInventoryInterface**> singleton{ ID::BGSInventoryInterface::Singleton };
 			return *singleton;
 		}
 
 		[[nodiscard]] const BGSInventoryItem* RequestInventoryItem(const std::uint32_t& a_handleID) const
 		{
 			using func_t = decltype(&BGSInventoryInterface::RequestInventoryItem);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1200959, 2194009) };
+			static REL::Relocation<func_t> func{ ID::BGSInventoryInterface::RequestInventoryItem };
 			return func(this, a_handleID);
 		}
 

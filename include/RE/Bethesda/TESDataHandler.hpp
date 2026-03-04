@@ -85,18 +85,7 @@ namespace RE
 			RUNTIME_DATA_CONTENT
 		};
 
-		struct VR_MOD_DATA
-		{
-#define VR_MOD_DATA_CONTENT                  \
-	std::uint32_t loadedModCount; /* 0FC0 */ \
-	std::uint32_t pad14;		  /* 0FC4 */ \
-	TESFile* loadedMods[0xFF];	  /* 0FC8 */
-			VR_MOD_DATA_CONTENT
-		};
-
-		inline static TESFileCollection* VRcompiledFileCollection = nullptr; // used by FalloutVRESL to store pointer to VR version
-
-		[[nodiscard]] static TESDataHandler* GetSingleton(bool a_VRESL = true);
+		[[nodiscard]] static TESDataHandler* GetSingleton();
 
 		[[nodiscard]] ObjectRefHandle CreateReferenceAtLocation(NEW_REFR_DATA& a_data);
 
@@ -153,58 +142,32 @@ namespace RE
 
 		[[nodiscard]] inline RUNTIME_DATA& GetRuntimeData() noexcept
 		{
-			return REL::RelocateMember<RUNTIME_DATA>(this, 0x0FF0, 0x0FF0);
+			return REL::RelocateMember<RUNTIME_DATA>(this, 0x0FF0);
 		}
 
 		[[nodiscard]] inline const RUNTIME_DATA GetRuntimeData() const noexcept
 		{
-			return REL::RelocateMember<RUNTIME_DATA>(this, 0x0FF0, 0x0FF0);
-		}
-
-		[[nodiscard]] inline VR_MOD_DATA* GetVRModData() noexcept
-		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsVR()) {
-				return &REL::RelocateMember<VR_MOD_DATA>(this, 0, 0xFC0);
-			}
-			return nullptr;
-		}
-
-		[[nodiscard]] inline const VR_MOD_DATA* GetVRModData() const noexcept
-		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsVR()) {
-				return &REL::RelocateMember<VR_MOD_DATA>(this, 0, 0xFC0);
-			}
-			return nullptr;
+			return REL::RelocateMember<RUNTIME_DATA>(this, 0x0FF0);
 		}
 
 		[[nodiscard]] inline TESFileCollection* GetCompiledFileCollection() noexcept
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsVR()) {
-				return VRcompiledFileCollection;
-			}
-			else {
-				return &REL::RelocateMember<TESFileCollection>(this, 0xFC0, 0);
-			}
+			return &REL::RelocateMember<TESFileCollection>(this, 0xFC0);
 		}
 
 		[[nodiscard]] inline const TESFileCollection* GetCompiledFileCollection() const noexcept
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsVR()) {
-				return VRcompiledFileCollection;
-			}
-			else {
-				return REL::RelocateMember<TESFileCollection*>(this, 0xFC0, 0);
-			}
+			return &REL::RelocateMember<TESFileCollection>(this, 0xFC0);
 		}
 
 		[[nodiscard]] inline TESRegionDataManager* GetRegionDataManager() noexcept
 		{
-			return REL::RelocateMember<TESRegionDataManager*>(this, 0x1018, 0x17E8);
+			return REL::RelocateMember<TESRegionDataManager*>(this, 0x1018);
 		}
 
 		[[nodiscard]] inline const TESRegionDataManager* GetRegionDataManager() const noexcept
 		{
-			return REL::RelocateMember<TESRegionDataManager*>(this, 0x1018, 0x17E8);
+			return REL::RelocateMember<TESRegionDataManager*>(this, 0x1018);
 		}
 
 		// members
@@ -217,28 +180,12 @@ namespace RE
 		TESFormID nextID;														  // 0FA0
 		TESFile* activeFile;													  // 0FA8
 		BSSimpleList<TESFile*> files;											  // 0FB0
-#if !defined(ENABLE_FALLOUT_VR)
 		TESFileCollection compiledFileCollection; // 0FC0
 		RUNTIME_DATA_CONTENT
 		TESRegionDataManager* regionDataManager; // 1018, VR 17E8
-#elif !defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4)
-		VR_MOD_DATA_CONTENT
-		RUNTIME_DATA_CONTENT
-		TESRegionDataManager* regionDataManager; // 1018, VR 17E8
-#endif
 	};
-#if !defined(ENABLE_FALLOUT_VR)
 	static_assert(sizeof(TESDataHandler) == 0x1020);
 	static_assert(offsetof(TESDataHandler, regionDataManager) == 0x1018);
 	static_assert(offsetof(TESDataHandler, compiledFileCollection) == 0xFC0);
-#elif !defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4)
-	static_assert(sizeof(TESDataHandler) == 0x17F0);
-	static_assert(offsetof(TESDataHandler, regionDataManager) == 0x17E8);
-	static_assert(offsetof(TESDataHandler, loadedModCount) == 0xFC0);
-	static_assert(offsetof(TESDataHandler, loadedMods) == 0xFC8);
-#else
-	static_assert(sizeof(TESDataHandler) == 0xFC0);
-#endif
 }
 #undef RUNTIME_DATA_CONTENT
-#undef VR_MOD_DATA_CONTENT

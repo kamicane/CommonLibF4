@@ -60,14 +60,14 @@ namespace RE::BSScript
 	[[nodiscard]] std::uint32_t Object::DecRef() const
 	{
 		using func_t = decltype(&Object::DecRef);
-		static REL::Relocation<func_t> func{ REL::ID(541793) };
+		static REL::Relocation<func_t> func{ ID::BSScript_Object::DecRef };
 		return func(this);
 	}
 
 	void Object::IncRef() const
 	{
 		using func_t = decltype(&Object::IncRef);
-		static REL::Relocation<func_t> func{ REL::RelocationID(461710, 2314436) };
+		static REL::Relocation<func_t> func{ ID::BSScript_Object::IncRef };
 		return func(this);
 	}
 }

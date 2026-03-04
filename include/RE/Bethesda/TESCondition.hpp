@@ -74,14 +74,14 @@ namespace RE
 		[[nodiscard]] float GetComparisonValue()
 		{
 			using func_t = decltype(&TESConditionItem::GetComparisonValue);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1373349, 2212007) };
+			static REL::Relocation<func_t> func{ ID::TESConditionItem::GetComparisonValue };
 			return func(this);
 		}
 
 		[[nodiscard]] bool IsTrue(TESObjectREFR* a_actionRef, TESObjectREFR* a_targetRef)
 		{
 			using func_t = decltype(&TESConditionItem::IsTrue);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1453240, 2212008) };
+			static REL::Relocation<func_t> func{ ID::TESConditionItem::IsTrue1 };
 			return func(this, a_actionRef, a_targetRef);
 		}
 
@@ -104,14 +104,14 @@ namespace RE
 		[[nodiscard]] bool IsTrue(TESObjectREFR* a_actionRef, TESObjectREFR* a_targetRef) const
 		{
 			using func_t = decltype(&TESCondition::IsTrue);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1275731, 2211989) };
+			static REL::Relocation<func_t> func{ ID::TESCondition::IsTrue };
 			return func(this, a_actionRef, a_targetRef);
 		}
 
 		[[nodiscard]] bool IsTrueForAllButFunction(ConditionCheckParams& a_paramData, SCRIPT_OUTPUT a_function) const
 		{
 			using func_t = decltype(&TESCondition::IsTrueForAllButFunction);
-			static REL::Relocation<func_t> func{ REL::ID(1182457) };
+			static REL::Relocation<func_t> func{ ID::TESCondition::IsTrueForAllButFunction };
 			return func(this, a_paramData, a_function);
 		}
 

@@ -21,7 +21,7 @@ namespace RE
 		[[nodiscard]] inline bool ActorInPowerArmor(const Actor& a_actor)
 		{
 			using func_t = decltype(&ActorInPowerArmor);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1176757, 2219437) };
+			static REL::Relocation<func_t> func{ ID::PowerArmor::ActorInPowerArmor };
 			return func(a_actor);
 		}
 
@@ -34,39 +34,39 @@ namespace RE
 		[[nodiscard]] inline BGSKeyword* GetArmorKeyword()
 		{
 			using func_t = decltype(&GetArmorKeyword);
-			static REL::Relocation<func_t> func{ REL::ID(961172) };
+			static REL::Relocation<func_t> func{ ID::PowerArmor::GetArmorKeyword };
 			return func();
 		}
 
 		[[nodiscard]] inline BGSKeyword* GetBatteryKeyword()
 		{
 			using func_t = decltype(&GetBatteryKeyword);
-			static REL::Relocation<func_t> func{ REL::ID(1493537) };
+			static REL::Relocation<func_t> func{ ID::PowerArmor::GetBatteryKeyword };
 			return func();
 		}
 
 		[[nodiscard]] inline TESAmmo* GetDefaultBatteryObject()
 		{
 			using func_t = decltype(&GetDefaultBatteryObject);
-			static REL::Relocation<func_t> func{ REL::ID(1279247) };
+			static REL::Relocation<func_t> func{ ID::PowerArmor::GetDefaultBatteryObject };
 			return func();
 		}
 
 		[[nodiscard]] inline bool IsPowerArmorBattery(const TESBoundObject* a_itemData)
 		{
 			using func_t = decltype(&IsPowerArmorBattery);
-			static REL::Relocation<func_t> func{ REL::ID(1012910) };
+			static REL::Relocation<func_t> func{ ID::PowerArmor::IsPowerArmorBattery };
 			return func(a_itemData);
 		}
 
 		inline void SyncFurnitureVisualsToInventory(TESObjectREFR* a_furniture, bool a_force3DUpdate, BGSInventoryItem* a_tempItemToAdd, bool a_hideCore)
 		{
 			using func_t = decltype(&SyncFurnitureVisualsToInventory);
-			static REL::Relocation<func_t> func{ REL::ID(1078979) };
+			static REL::Relocation<func_t> func{ ID::PowerArmor::SyncFurnitureVisualsToInventory };
 			return func(a_furniture, a_force3DUpdate, a_tempItemToAdd, a_hideCore);
 		}
 
-		inline REL::Relocation<SettingT<GameSettingCollection>*> fNewBatteryCapacity{ REL::ID(1134204) };
+		inline REL::Relocation<SettingT<GameSettingCollection>*> fNewBatteryCapacity{ ID::PowerArmor::fNewBatteryCapacity };
 	}
 
 	class __declspec(novtable) PowerArmorGeometry
@@ -89,21 +89,21 @@ namespace RE
 
 		[[nodiscard]] static PowerArmorGeometry* GetSingleton()
 		{
-			static REL::Relocation<PowerArmorGeometry**> singleton{ REL::ID(1365745) };
+			static REL::Relocation<PowerArmorGeometry**> singleton{ ID::PowerArmorGeometry::Singleton };
 			return *singleton;
 		}
 
 		void HidePipboyPAGeometry()
 		{
 			using func_t = decltype(&PowerArmorGeometry::HidePipboyPAGeometry);
-			static REL::Relocation<func_t> func{ REL::ID(976332) };
+			static REL::Relocation<func_t> func{ ID::PowerArmorGeometry::HidePipboyPAGeometry };
 			return func(this);
 		}
 
 		void ShowPipboyPAGeometry()
 		{
 			using func_t = decltype(&PowerArmorGeometry::ShowPipboyPAGeometry);
-			static REL::Relocation<func_t> func{ REL::ID(19066) };
+			static REL::Relocation<func_t> func{ ID::PowerArmorGeometry::ShowPipboyPAGeometry };
 			return func(this);
 		}
 

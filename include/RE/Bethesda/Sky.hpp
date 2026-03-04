@@ -74,14 +74,14 @@ namespace RE
 		[[nodiscard]] static Sky* GetSingleton()
 		{
 			using func_t = decltype(&Sky::GetSingleton);
-			static REL::Relocation<func_t> func{ REL::RelocationID(484694, 2192448) };
+			static REL::Relocation<func_t> func{ ID::Sky::Singleton };
 			return func();
 		}
 
 		void ForceWeather(TESWeather* a_weather, bool a_override)
 		{
 			using func_t = decltype(&Sky::ForceWeather);
-			static REL::Relocation<func_t> func{ REL::RelocationID(698558, 2208861) };
+			static REL::Relocation<func_t> func{ ID::Sky::ForceWeather };
 			return func(this, a_weather, a_override);
 		}
 
@@ -96,7 +96,7 @@ namespace RE
 		void ResetWeather()
 		{
 			using func_t = decltype(&Sky::ResetWeather);
-			static REL::Relocation<func_t> func{ REL::RelocationID(6511, 2208860) };
+			static REL::Relocation<func_t> func{ ID::Sky::ResetWeather };
 			return func(this);
 		}
 

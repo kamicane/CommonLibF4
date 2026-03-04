@@ -11,3 +11,6 @@ vs*/
 # files
 *.zip
 CMakeUserPresets.json
+.tmp_*
+.github
+compile_commands.json

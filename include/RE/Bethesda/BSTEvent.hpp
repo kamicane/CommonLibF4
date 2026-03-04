@@ -337,7 +337,7 @@ namespace RE
 
 		[[nodiscard]] static BSTGlobalEvent* GetSingleton()
 		{
-			static REL::Relocation<BSTGlobalEvent**> singleton{ REL::RelocationID(1424022, 2688814) };
+			static REL::Relocation<BSTGlobalEvent**> singleton{ ID::BSTEvent::BSTGlobalEvent::Singleton };
 			return *singleton;
 		}
 

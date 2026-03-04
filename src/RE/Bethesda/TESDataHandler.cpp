@@ -2,46 +2,37 @@
 
 namespace RE
 {
-	TESDataHandler* TESDataHandler::GetSingleton(bool a_VRESL)
+	TESDataHandler* TESDataHandler::GetSingleton()
 	{
-		static REL::Relocation<TESDataHandler**> singleton{ REL::RelocationID(711558, 2688883) };
-		if (REL::Module::IsVR() && a_VRESL && !VRcompiledFileCollection) {
-			const auto VRhandle = REX::W32::GetModuleHandleW(L"falloutvresl");
-			if (VRhandle != NULL) {
-				const auto GetCompiledFileCollection = reinterpret_cast<const TESFileCollection* (*)()>(REX::W32::GetProcAddress(VRhandle, "GetCompiledFileCollectionExtern"));
-				if (GetCompiledFileCollection != nullptr) {
-					TESDataHandler::VRcompiledFileCollection = const_cast<TESFileCollection*>(GetCompiledFileCollection());
-				}
-			}
-		}
+		static REL::Relocation<TESDataHandler**> singleton{ ID::TESDataHandler::Singleton };
 		return *singleton;
 	}
 
 	ObjectRefHandle TESDataHandler::CreateReferenceAtLocation(NEW_REFR_DATA& a_data)
 	{
 		using func_t = decltype(&TESDataHandler::CreateReferenceAtLocation);
-		static REL::Relocation<func_t> func{ REL::RelocationID(500304, 500304) };
+		static REL::Relocation<func_t> func{ ID::TESDataHandler::CreateReferenceAtLocation };
 		return func(this, a_data);
 	}
 
 	bool TESDataHandler::AddFormToDataHandler(TESForm* a_form)
 	{
 		using func_t = decltype(&TESDataHandler::AddFormToDataHandler);
-		static REL::Relocation<func_t> func{ REL::RelocationID(350112, 2192271) };
+		static REL::Relocation<func_t> func{ ID::TESDataHandler::AddFormToDataHandler };
 		return func(this, a_form);
 	}
 
 	bool TESDataHandler::CheckModsLoaded(bool a_everModded) const
 	{
 		using func_t = decltype(&TESDataHandler::CheckModsLoaded);
-		static REL::Relocation<func_t> func{ REL::RelocationID(1432894, 2192323) };
+		static REL::Relocation<func_t> func{ ID::TESDataHandler::CheckModsLoaded };
 		return func(this, a_everModded);
 	}
 
 	bool TESDataHandler::IsFormIDInUse(std::uint32_t a_formID) const
 	{
 		using func_t = decltype(&TESDataHandler::IsFormIDInUse);
-		static REL::Relocation<func_t> func{ REL::RelocationID(1448838, 2192351) };
+		static REL::Relocation<func_t> func{ ID::TESDataHandler::IsFormIDInuse };
 		return func(this, a_formID);
 	}
 
@@ -52,11 +43,7 @@ namespace RE
 			return 0;
 		}
 
-		if (REL::Module::IsVR() && !VRcompiledFileCollection) {
-			// Use FalloutVR lookup logic, ignore light plugin index which doesn't exist in VR
-			return (a_rawFormID & 0xFFFFFF) | (file->compileIndex << 24);
-		}
-		else {
+		{
 			TESFormID formID = file->compileIndex << 24;
 			formID += file->smallFileCompileIndex << 12;
 			formID += a_rawFormID;
@@ -116,15 +103,6 @@ namespace RE
 				}
 			}
 		}
-		else if (auto pLoadedMods = GetVRModData()) { // In VR so only have files loadedMods
-			for (uint32_t i = 0; i < pLoadedMods->loadedModCount; i++) {
-				auto& file = pLoadedMods->loadedMods[i];
-				if (a_modName.size() == strlen(file->filename) &&
-					_strnicmp(file->filename, a_modName.data(), a_modName.size()) == 0) {
-					return file;
-				}
-			}
-		}
 		return nullptr;
 	}
 
@@ -147,14 +125,6 @@ namespace RE
 		auto pCompiledFileCollection = GetCompiledFileCollection();
 		if (pCompiledFileCollection) {
 			for (auto& file : pCompiledFileCollection->files) {
-				if (file->compileIndex == a_index) {
-					return file;
-				}
-			}
-		}
-		else if (auto pLoadedMods = GetVRModData()) { // In VR so only have files loadedMods
-			for (uint32_t i = 0; i < pLoadedMods->loadedModCount; i++) {
-				auto& file = pLoadedMods->loadedMods[i];
 				if (file->compileIndex == a_index) {
 					return file;
 				}

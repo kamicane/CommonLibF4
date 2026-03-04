@@ -16,7 +16,7 @@ namespace RE
 		hknpClosestHitCollector()
 		{
 			typedef hknpClosestHitCollector* func_t(hknpClosestHitCollector*);
-			static REL::Relocation<func_t> func{ REL::ID(951692), 0x10 };
+			static REL::Relocation<func_t> func{ REL::ID(951692), 0x10 }; // skip
 			func(this);
 		}
 

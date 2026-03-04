@@ -25,7 +25,7 @@ namespace RE
 	public:
 		[[nodiscard]] static PipboyDataManager* GetSingleton()
 		{
-			static REL::Relocation<PipboyDataManager**> singleton{ REL::RelocationID(1178971, 2689086) };
+			static REL::Relocation<PipboyDataManager**> singleton{ ID::PipboyDataManager::Singleton };
 			return *singleton;
 		}
 

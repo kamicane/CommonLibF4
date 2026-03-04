@@ -472,224 +472,29 @@ namespace REL
 	};
 
 	/**
-	 * Return the correct value of two choices between VR and F4 versions of FALLOUT.
+	 * Return the correct value for F4/NG/AE runtimes.
 	 *
-	 * <p>
-	 * This is commonly used to select between relative offsets within a function, when hooking a call instruction.
-	 * In such cases the function can be identified by its Address Library ID, but the offset within the function
-	 * may vary between FALLOUT versions. This selection is made at runtime, allowing the same compiled code to run
-	 * in multiple versions of FALLOUT.
-	 * </p>
+	 * This selects one of three values at runtime based on the detected runtime family.
 	 *
 	 * @tparam T the type of value to return.
-	 * @param a_f4AndVR the value to use for F4 and VR.
+	 * @param a_f4 the value to use for F4 (fallback for desktop runtimes).
 	 * @param a_ng the value to use for NG.
-	 * @return Either <code>a_f4AndVR</code> if the current runtime is FALLOUT SE or VR, or <code>a_ae</code> if the runtime is AE.
-	 */
-	template <class T>
-	[[nodiscard]] FALLOUT_ADDR T Relocate([[maybe_unused]] T&& a_f4AndVR, [[maybe_unused]] T&& a_ng) noexcept
-	{
-#ifndef ENABLE_FALLOUT_NG
-		return a_f4AndVR;
-#elif !defined(ENABLE_FALLOUT_F4) && !defined(ENABLE_FALLOUT_VR)
-		return a_ng;
-#else
-		return Module::IsNG() ? a_ng : a_f4AndVR;
-#endif
-	}
-
-	/**
-	 * Return the correct value of two choices between original, NG and VR versions of FALLOUT.
-	 *
-	 * <p>
-	 * This is commonly used to select between relative offsets within a function, when hooking a call instruction.
-	 * In such cases the function can be identified by its Address Library ID, but the offset within the function
-	 * may vary between FALLOUT versions. This selection is made at runtime, allowing the same compiled code to run
-	 * in multiple versions of FALLOUT.
-	 * </p>
-	 *
-	 * @tparam T the type of value to return.
-	 * @param a_f4 the value to use for F4.
-	 * @param a_ng the value to use for NG.
-	 * @param a_vr the value to use for VR.
-	 * @return Either <code>a_f4</code> if the current runtime is F4, or <code>a_vr</code> if the runtime is VR
+	 * @param a_ae the value to use for Anniversary Edition (AE).
 	 */
 	template <class T>
 	[[nodiscard]] FALLOUT_REL T Relocate(
 		[[maybe_unused]] T a_f4,
 		[[maybe_unused]] T a_ng,
-		[[maybe_unused]] T a_vr) noexcept
+		[[maybe_unused]] T a_ae) noexcept
 	{
-#if !defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_VR)
-		return a_f4;
-#elif !defined(ENABLE_FALLOUT_F4) && !defined(ENABLE_FALLOUT_VR)
-		return a_ng;
-#elif !defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4)
-		return a_vr;
-#else
 		switch (Module::get().GetRuntime()) {
 			case Module::Runtime::NG:
 				return a_ng;
-			case Module::Runtime::VR:
-				return a_vr;
+			case Module::Runtime::AE:
+				return a_ae;
 			default:
 				return a_f4;
 		}
-#endif
-	}
-
-	namespace detail
-	{
-		template <class T>
-		struct RelocateVirtualHelper
-		{
-		};
-
-		template <class Ret, class This>
-		struct RelocateVirtualHelper<Ret(This*)>
-		{
-			using this_type = This;
-			using return_type = Ret;
-			using function_type = Ret(This*);
-		};
-
-		template <class Ret, class This, class... Args>
-		struct RelocateVirtualHelper<Ret(This*, Args...)>
-		{
-			using this_type = This;
-			using return_type = Ret;
-			using function_type = Ret(This*, Args...);
-		};
-
-		template <class Ret, class This>
-		struct RelocateVirtualHelper<Ret (This::*)()>
-		{
-			using this_type = This;
-			using return_type = Ret;
-			using function_type = Ret(This*);
-		};
-
-		template <class Ret, class This, class... Args>
-		struct RelocateVirtualHelper<Ret (This::*)(Args...)>
-		{
-			using this_type = This;
-			using return_type = Ret;
-			using function_type = Ret(This*, Args...);
-		};
-
-		template <class Ret, class This>
-		struct RelocateVirtualHelper<Ret (This::*)() const>
-		{
-			using this_type = const This;
-			using return_type = Ret;
-			using function_type = Ret(const This*);
-		};
-
-		template <class Ret, class This, class... Args>
-		struct RelocateVirtualHelper<Ret (This::*)(Args...) const>
-		{
-			using this_type = const This;
-			using return_type = Ret;
-			using function_type = Ret(const This*, Args...);
-		};
-	}
-
-	/**
-	 * Invokes a virtual function in a cross-platform way where the vtable structure is variant across AE/SE and VR runtimes.
-	 *
-	 * <p>
-	 * Some classes in Fallout VR add new virtual functions in the middle of the vtable structure, which makes it ABI-incompatible with AE/SE.
-	 * A naive virtual function call, therefore, cannot work across all runtimes without the plugin being recompiled specifically for VR.
-	 * This call works with types which have variant vtables to allow a non-virtual function definition to be created in the virtual function's
-	 * place, and to have that call dynamically lookup the correct function based on the vtable structure expected in the current runtime.
-	 * </p>
-	 *
-	 * @tparam Fn the type of the function being called.
-	 * @tparam Args the types of the arguments being passed.
-	 * @param a_f4AndNGVtableOffset the offset from the <code>this</code> pointer to the vtable with the virtual function in SE/AE.
-	 * @param a_vrVtableIndex the offset from the <code>this</code> pointer to the vtable with the virtual function in VR.
-	 * @param a_f4AndNGVtableIndex the index of the function in the class' vtable in F4 and NG.
-	 * @param a_vrVtableIndex the index of the function in the class' vtable in VR.
-	 * @param a_self the <code>this</code> argument for the call.
-	 * @param a_args the remaining arguments for the call, if any.
-	 * @return The result of the function call.
-	 */
-	template <class Fn, class... Args>
-	[[nodiscard]] inline typename detail::RelocateVirtualHelper<Fn>::return_type RelocateVirtual(
-		[[maybe_unused]] std::ptrdiff_t a_f4AndNGVtableOffset,
-		[[maybe_unused]] std::ptrdiff_t a_vrVtableOffset,
-		[[maybe_unused]] std::ptrdiff_t a_f4AndNGVtableIndex,
-		[[maybe_unused]] std::ptrdiff_t a_vrVtableIndex,
-		typename detail::RelocateVirtualHelper<Fn>::this_type* a_self, Args&&... a_args)
-	{
-		return (*reinterpret_cast<typename detail::RelocateVirtualHelper<Fn>::function_type**>(
-			*reinterpret_cast<const uintptr_t*>(reinterpret_cast<uintptr_t>(a_self) +
-#ifndef ENABLE_FALLOUT_VR
-												a_f4AndNGVtableOffset) +
-			a_f4AndNGVtableIndex
-#elif !defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4)
-												a_vrVtableOffset) +
-			a_vrVtableIndex
-#else
-												(Module::IsVR() ? a_vrVtableOffset : a_f4AndNGVtableOffset)) +
-			(Module::IsVR() ? a_vrVtableIndex : a_f4AndNGVtableIndex)
-#endif
-				* sizeof(uintptr_t)))(a_self, std::forward<Args>(a_args)...);
-	}
-
-	/**
-	 * Invokes a virtual function in a cross-platform way where the vtable structure is variant across AE/SE and VR runtimes.
-	 *
-	 * <p>
-	 * Some classes in Fallout VR add new virtual functions in the middle of the vtable structure, which makes it ABI-incompatible with AE/SE.
-	 * A naive virtual function call, therefore, cannot work across all runtimes without the plugin being recompiled specifically for VR.
-	 * This call works with types which have variant vtables to allow a non-virtual function definition to be created in the virtual function's
-	 * place, and to have that call dynamically lookup the correct function based on the vtable structure expected in the current runtime.
-	 * </p>
-	 *
-	 * <p>
-	 * This call assumes the vtable to be used is the one at offset 0, i.e. it invokes a virtual function either on the first parent class
-	 * or the current class.
-	 * </p>
-	 *
-	 * @tparam Fn the type of the function being called.
-	 * @tparam Args the types of the arguments being passed.
-	 * @param a_f4AndNGVtableIndex the index of the function in the class' vtable in F4 and NG.
-	 * @param a_vrVtableIndex the index of the function in the class' vtable in VR.
-	 * @param a_self the <code>this</code> argument for the call.
-	 * @param a_args the remaining arguments for the call, if any.
-	 * @return The result of the function call.
-	 */
-	template <class Fn, class... Args>
-	[[nodiscard]] inline typename detail::RelocateVirtualHelper<Fn>::return_type RelocateVirtual(
-		std::ptrdiff_t a_f4AndNGVtableIndex,
-		std::ptrdiff_t a_vrVtableIndex,
-		typename detail::RelocateVirtualHelper<Fn>::this_type* a_self, Args&&... a_args)
-	{
-		return RelocateVirtual<Fn, Args...>(0, 0, a_f4AndNGVtableIndex, a_vrVtableIndex, a_self, std::forward<Args>(a_args)...);
-	}
-
-	/**
-	 * Gets a member variable in a cross-platform way, using runtime-specific memory offsets.
-	 *
-	 * <p>
-	 * This function handles the variant memory structures used in Fallout VR as compared to versions of SE.
-	 * It allows a memory offset relative to the object's base address for SE (and AE) and a separate one for
-	 * VR. This simplifies the process of creating functions to get member variables that are at different
-	 * offsets in different runtimes from a single build.
-	 * </p>
-	 *
-	 * @tparam T the type of the member being accessed.
-	 * @tparam This the type of the target object that has the member.
-	 * @param a_self the target object that has the member.
-	 * @param a_f4AndNG the memory offset of the member in Fallout F4 and NG.
-	 * @param a_vr the memory offset of the member in Fallout VR.
-	 * @return A reference to the member.
-	 */
-	template <class T, class This>
-	[[nodiscard]] inline T& RelocateMember(This* a_self, std::ptrdiff_t a_f4AndNG, std::ptrdiff_t a_vr)
-	{
-		return *reinterpret_cast<T*>(reinterpret_cast<uintptr_t>(a_self) + Relocate(a_f4AndNG, a_f4AndNG, a_vr));
 	}
 
 	template <class T, class This>

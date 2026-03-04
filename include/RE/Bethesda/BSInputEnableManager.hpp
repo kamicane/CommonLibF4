@@ -41,7 +41,7 @@ namespace RE
 		[[nodiscard]] std::uint32_t DecRef() const
 		{
 			using func_t = decltype(&BSInputEnableLayer::DecRef);
-			static REL::Relocation<func_t> func{ REL::RelocationID(659989, 2268272) };
+			static REL::Relocation<func_t> func{ ID::BSInputEnableLayer::DecRef };
 			return func(this);
 		}
 
@@ -75,14 +75,14 @@ namespace RE
 
 		[[nodiscard]] static BSInputEnableManager* GetSingleton()
 		{
-			static REL::Relocation<BSInputEnableManager**> singleton{ REL::RelocationID(781703, 2689007) };
+			static REL::Relocation<BSInputEnableManager**> singleton{ ID::BSInputEnableManager::Singleton };
 			return *singleton;
 		}
 
 		bool AllocateNewLayer(BSTSmartPointer<BSInputEnableLayer>& a_layer, const char* a_debugName)
 		{
 			using func_t = decltype(&BSInputEnableManager::AllocateNewLayer);
-			static REL::Relocation<func_t> func{ REL::RelocationID(537494, 2268244) };
+			static REL::Relocation<func_t> func{ ID::BSInputEnableManager::AllocateNewLayer };
 			return func(this, a_layer, a_debugName);
 		}
 
@@ -96,14 +96,14 @@ namespace RE
 		bool EnableUserEvent(std::uint32_t a_layerID, UserEvents::USER_EVENT_FLAGS a_userEventFlags, bool a_enable, UserEvents::SENDER_ID a_senderID)
 		{
 			using func_t = decltype(&BSInputEnableManager::EnableUserEvent);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1432984, 2268263) };
+			static REL::Relocation<func_t> func{ ID::BSInputEnableManager::EnableUserEvent };
 			return func(this, a_layerID, a_userEventFlags, a_enable, a_senderID);
 		}
 
 		bool EnableOtherEvent(std::uint32_t a_layerID, OtherInputEvents::OTHER_EVENT_FLAGS a_otherEventFlags, bool a_enable, UserEvents::SENDER_ID a_senderID)
 		{
 			using func_t = decltype(&BSInputEnableManager::EnableOtherEvent);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1419268, 2268265) };
+			static REL::Relocation<func_t> func{ ID::BSInputEnableManager::EnableOtherEvent };
 			return func(this, a_layerID, a_otherEventFlags, a_enable, a_senderID);
 		}
 

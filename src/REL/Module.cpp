@@ -1,5 +1,6 @@
 #include "REL/Module.hpp"
 
+#include "F4SE/Version.hpp"
 #include "REX/W32/KERNEL32.hpp"
 
 namespace REL
@@ -47,12 +48,14 @@ namespace REL
 		const auto version = GetFileVersion(_filename);
 		if (version) {
 			_version = *version;
-			switch (_version[1]) {
-				case 2: // search for 2 in 1.2.72.0
-					_runtime = Runtime::VR;
-					break;
-				default:
-					_runtime = (_version[2] > 163) ? Runtime::NG : Runtime::F4;
+			if (_version <= F4SE::RUNTIME_LATEST_OG) {
+				_runtime = Runtime::F4;
+			}
+			else if (_version <= F4SE::RUNTIME_LATEST_NG) {
+				_runtime = Runtime::NG;
+			}
+			else {
+				_runtime = Runtime::AE;
 			}
 			return;
 		}

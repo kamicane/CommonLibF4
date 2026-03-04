@@ -37,7 +37,7 @@ namespace REL
 		explicit constexpr VariantOffset(
 			[[maybe_unused]] std::size_t a_f4Offset,
 			[[maybe_unused]] std::size_t a_ngOffset,
-			[[maybe_unused]] std::size_t a_vrOffset) noexcept
+			[[maybe_unused]] std::size_t a_aeOffset) noexcept
 		{
 #ifdef ENABLE_FALLOUT_F4
 			_f4Offset = a_f4Offset;
@@ -45,9 +45,9 @@ namespace REL
 #ifdef ENABLE_FALLOUT_NG
 			_ngOffset = a_ngOffset;
 #endif
-#ifdef ENABLE_FALLOUT_VR
-			_vrOffset = a_vrOffset;
-#endif
+		#ifdef ENABLE_FALLOUT_AE
+			_aeOffset = a_aeOffset;
+		#endif
 		}
 
 		[[nodiscard]] std::uintptr_t address() const
@@ -67,10 +67,10 @@ namespace REL
 				case Module::Runtime::F4:
 					return _f4Offset;
 #endif
-#ifdef ENABLE_FALLOUT_VR
-				case Module::Runtime::VR:
-					return _vrOffset;
-#endif
+		#ifdef ENABLE_FALLOUT_AE
+			case Module::Runtime::AE:
+				return _aeOffset;
+		#endif
 				default:
 					return 0;
 			}
@@ -87,8 +87,8 @@ namespace REL
 #ifdef ENABLE_FALLOUT_NG
 		std::size_t _ngOffset{ 0 };
 #endif
-#ifdef ENABLE_FALLOUT_VR
-		std::size_t _vrOffset{ 0 };
+#ifdef ENABLE_FALLOUT_AE
+		std::size_t _aeOffset{ 0 };
 #endif
 	};
 }

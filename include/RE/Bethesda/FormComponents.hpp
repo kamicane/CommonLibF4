@@ -654,7 +654,7 @@ namespace RE
 		void SetParentGroupNumber(BGSKeyword* a_parent, std::uint32_t a_groupID)
 		{
 			using func_t = decltype(&BGSAttachParentArray::SetParentGroupNumber);
-			static REL::Relocation<func_t> func{ REL::ID(1412266) };
+			static REL::Relocation<func_t> func{ ID::BGSAttachParentArray::SetParentGroupNumber };
 			return func(this, a_parent, a_groupID);
 		}
 	};
@@ -1172,14 +1172,14 @@ namespace RE
 		void AllocatePerkRankArray(std::uint32_t a_count)
 		{
 			using func_t = decltype(&BGSPerkRankArray::AllocatePerkRankArray);
-			static REL::Relocation<func_t> func{ REL::ID(888419) };
+			static REL::Relocation<func_t> func{ ID::BGSPerkRankArray::AllocatePerkRankArray };
 			return func(this, a_count);
 		}
 
 		void ClearPerks(bool a_removeFormUser)
 		{
 			using func_t = decltype(&BGSPerkRankArray::ClearPerks);
-			static REL::Relocation<func_t> func{ REL::ID(1247917) };
+			static REL::Relocation<func_t> func{ ID::BGSPerkRankArray::ClearPerks };
 			return func(this, a_removeFormUser);
 		}
 
@@ -1421,14 +1421,14 @@ namespace RE
 		void GetDescription(BSString& a_out, const TESForm* a_form) const
 		{
 			using func_t = decltype(&BGSLocalizedStringDL::GetDescription);
-			static REL::Relocation<func_t> func{ REL::ID(523613) };
+			static REL::Relocation<func_t> func{ ID::BGSLocalizedStringDL::GetDescription };
 			return func(this, a_out, a_form);
 		}
 
 		[[nodiscard]] BGSLocalizedStrings::ScrapStringBuffer GetText(TESFile& a_file) const
 		{
 			using func_t = decltype(&BGSLocalizedStringDL::GetText);
-			static REL::Relocation<func_t> func{ REL::ID(472297) };
+			static REL::Relocation<func_t> func{ ID::BGSLocalizedStringDL::GetText };
 			return func(this, a_file);
 		}
 
@@ -1457,7 +1457,7 @@ namespace RE
 		void GetDescription(BSString& a_outString, const TESForm* a_form = nullptr)
 		{
 			using func_t = decltype(&TESDescription::GetDescription);
-			static REL::Relocation<func_t> func{ REL::ID(523613) };
+			static REL::Relocation<func_t> func{ ID::TESDescription::GetDescription };
 			return func(this, a_outString, a_form);
 		}
 
@@ -1522,7 +1522,7 @@ namespace RE
 		[[nodiscard]] static auto GetSparseFullNameMap()
 			-> BSTHashMap<const TESForm*, BGSLocalizedString>&
 		{
-			static REL::Relocation<BSTHashMap<const TESForm*, BGSLocalizedString>*> sparseFullNameMap{ REL::RelocationID(226372, 2661402), -0x8 };
+			static REL::Relocation<BSTHashMap<const TESForm*, BGSLocalizedString>*> sparseFullNameMap{ ID::TESFullName::SparseFullNameMap, -0x8 };
 			return *sparseFullNameMap;
 		}
 
@@ -1554,7 +1554,7 @@ namespace RE
 		[[nodiscard]] static std::uint32_t GetFormHealth(const TESForm* a_form, const TBO_InstanceData* a_data)
 		{
 			using func_t = decltype(&TESHealthForm::GetFormHealth);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1515099, 2193227) };
+			static REL::Relocation<func_t> func{ ID::TESHealthForm::GetFormHealth };
 			return func(a_form, a_data);
 		}
 
@@ -1747,7 +1747,7 @@ namespace RE
 		std::uint16_t GetLevel() const
 		{
 			using func_t = decltype(&TESActorBaseData::GetLevel);
-			static REL::Relocation<func_t> func{ REL::RelocationID(151866, 2192891) };
+			static REL::Relocation<func_t> func{ ID::TESActorBaseData::GetLevel };
 			return func(this);
 		}
 
@@ -1929,7 +1929,7 @@ namespace RE
 		LEVELED_OBJECT* AddLeveledObject(std::uint16_t a_level, uint16_t a_count, int8_t a_chanceNone, TESForm* a_item, ContainerItemExtra* a_itemExtra)
 		{
 			using func_t = decltype(&TESLeveledList::AddLeveledObject);
-			static REL::Relocation<func_t> func{ REL::ID(1163308) };
+			static REL::Relocation<func_t> func{ ID::TESLeveledList::AddLeveledObject };
 			return func(this, a_level, a_count, a_chanceNone, a_item, a_itemExtra);
 		}
 
@@ -1943,28 +1943,28 @@ namespace RE
 			const char* a_overrideName = nullptr)
 		{
 			using func_t = decltype(&TESLeveledList::CalculateCurrentFormList);
-			static REL::Relocation<func_t> func{ REL::RelocationID(507405, 2193259) };
+			static REL::Relocation<func_t> func{ ID::TESLeveledList::CalculateCurrentFormList };
 			return func(this, a_level, a_count, a_outCont, a_allBelowForce, a_clampToPlayer, a_instanceFilter, a_overrideName);
 		}
 
 		void CalculateCurrentFormListForRef(TESObjectREFR* a_ref, BSScrapArray<CALCED_OBJECT>& a_outCont, bool a_legendary)
 		{
 			using func_t = decltype(&TESLeveledList::CalculateCurrentFormListForRef);
-			static REL::Relocation<func_t> func{ REL::RelocationID(507405, 2193260) };
+			static REL::Relocation<func_t> func{ ID::TESLeveledList::CalculateCurrentFormListForRef };
 			return func(this, a_ref, a_outCont, a_legendary);
 		}
 
 		bool GetUseAll()
 		{
 			using func_t = decltype(&TESLeveledList::GetUseAll);
-			static REL::Relocation<func_t> func{ REL::RelocationID(233875, 2193253) };
+			static REL::Relocation<func_t> func{ ID::TESLeveledList::GetUseAll };
 			return func(this);
 		}
 
 		void RemoveAllScriptAddedLeveledObjects()
 		{
 			using func_t = decltype(&TESLeveledList::RemoveAllScriptAddedLeveledObjects);
-			static REL::Relocation<func_t> func{ REL::ID(1500052) };
+			static REL::Relocation<func_t> func{ ID::TESLeveledList::RemoveAllScriptAddedLeveledObjects };
 			return func(this);
 		}
 
@@ -2187,7 +2187,7 @@ namespace RE
 		bool AddSpell(TESForm* a_spell)
 		{
 			using func_t = decltype(&TESSpellList::AddSpell);
-			static REL::Relocation<func_t> func{ REL::ID(1312083) };
+			static REL::Relocation<func_t> func{ ID::TESSpellList::AddSpell };
 			return func(this, a_spell);
 		}
 
@@ -2228,7 +2228,7 @@ namespace RE
 		[[nodiscard]] static std::uint32_t GetFormValue(const TESForm* a_form, const TBO_InstanceData* a_data)
 		{
 			using func_t = std::int32_t (*)(const TESForm*, const TBO_InstanceData*);
-			static REL::Relocation<func_t> func{ REL::ID(885783) };
+			static REL::Relocation<func_t> func{ ID::TESValueForm::GetFormValue };
 			return func(a_form, a_data);
 		}
 
@@ -2262,7 +2262,7 @@ namespace RE
 		[[nodiscard]] static float GetFormWeight(const TESForm* a_form, const TBO_InstanceData* a_data)
 		{
 			using func_t = float (*)(const TESForm*, const TBO_InstanceData*);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1321341, 2193446) };
+			static REL::Relocation<func_t> func{ ID::TESWeightForm::GetFormWeight };
 			return func(a_form, a_data);
 		}
 

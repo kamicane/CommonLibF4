@@ -42,14 +42,14 @@ namespace RE
 
 		[[nodiscard]] static FavoritesManager* GetSingleton()
 		{
-			static REL::Relocation<FavoritesManager**> singleton{ REL::RelocationID(198281, 2694399) };
+			static REL::Relocation<FavoritesManager**> singleton{ ID::FavoritesManager::Singleton };
 			return *singleton;
 		}
 
 		[[nodiscard]] bool IsComponentFavorite(const TESBoundObject* a_component)
 		{
 			using func_t = decltype(&FavoritesManager::IsComponentFavorite);
-			static REL::Relocation<func_t> func{ REL::RelocationID(352046, 2248752) };
+			static REL::Relocation<func_t> func{ ID::FavoritesManager::IsComponentFavorite };
 			return func(this, a_component);
 		}
 

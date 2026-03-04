@@ -18,7 +18,7 @@ namespace RE
 			static void release(Entry*& a_entry)
 			{
 				using func_t = decltype(&Entry::release);
-				static REL::Relocation<func_t> func{ REL::RelocationID(1204430, 2268720) };
+				static REL::Relocation<func_t> func{ ID::BSStringPool::Entry::Release };
 				return func(a_entry);
 			}
 
@@ -123,7 +123,7 @@ namespace RE
 		static BucketTable& GetSingleton()
 		{
 			using func_t = decltype(&BucketTable::GetSingleton);
-			static REL::Relocation<func_t> func{ REL::RelocationID(1390486, 2268736) };
+			static REL::Relocation<func_t> func{ REL::RelocationID(1390486, 2268736) }; // skip
 			return func();
 		}
 
@@ -141,7 +141,7 @@ namespace RE
 	inline void GetEntry<char>(BSStringPool::Entry*& a_result, const char* a_string, bool a_caseSensitive)
 	{
 		using func_t = decltype(&GetEntry<char>);
-		static REL::Relocation<func_t> func{ REL::RelocationID(507142, 2268729) };
+		static REL::Relocation<func_t> func{ ID::BSStringPool::GetEntry_char };
 		return func(a_result, a_string, a_caseSensitive);
 	}
 
@@ -149,7 +149,7 @@ namespace RE
 	inline void GetEntry<wchar_t>(BSStringPool::Entry*& a_result, const wchar_t* a_string, bool a_caseSensitive)
 	{
 		using func_t = decltype(&GetEntry<wchar_t>);
-		static REL::Relocation<func_t> func{ REL::RelocationID(345043, 2268730) };
+		static REL::Relocation<func_t> func{ ID::BSStringPool::GetEntry_wchar };
 		return func(a_result, a_string, a_caseSensitive);
 	}
 }

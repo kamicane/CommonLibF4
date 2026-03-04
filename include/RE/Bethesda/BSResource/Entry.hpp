@@ -35,8 +35,7 @@ namespace RE::BSResource
 	public:
 		static bool ReleaseEntryAction(EntryBase* a_entry)
 		{
-			using func_t = decltype(&EntryDBBaseUtil::ReleaseEntryAction);
-			static REL::Relocation<func_t> func{ REL::ID(777279) };
+			static REL::Relocation<decltype(&EntryDBBaseUtil::ReleaseEntryAction)> func{ RE::ID::BSResource_EntryDBBaseUtil::ReleaseEntryAction };
 			return func(a_entry);
 		}
 
