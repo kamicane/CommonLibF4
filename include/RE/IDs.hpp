@@ -1003,8 +1003,8 @@ namespace RE::ID
 		inline constexpr REL::RelocationID CacheShaderFXQuadsForRenderer_Impl{ 863029, 0, 2223200 };
 		inline constexpr REL::RelocationID TransferCachedShaderFXQuadsForRenderer{ 65166, 0, 2223201 };
 		inline constexpr REL::RelocationID SetViewportRect{ 1554334, 0, 2223202 };
-		inline constexpr REL::RelocationID AppendShaderFXInfos{ 0, 0, 2223203 };
-		inline constexpr REL::RelocationID SetUpButtonBar{ 0, 0, 2223197 };
+		inline constexpr REL::RelocationID AppendShaderFXInfos{ 583584, 0, 2223203 };
+		inline constexpr REL::RelocationID SetUpButtonBar{ 531584, 0, 2223197 };
 	}
 
 	namespace GamePlayFormulas
