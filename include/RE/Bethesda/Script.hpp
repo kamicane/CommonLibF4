@@ -316,7 +316,7 @@ namespace RE
 
 		[[nodiscard]] static std::span<SCRIPT_FUNCTION> GetConsoleFunctions()
 		{
-			static FALLOUT_REL_CONSTEXPR auto SIZE = REL::Module::IsNG() ? 526ui32 : 522ui32;
+			static FALLOUT_REL_CONSTEXPR auto SIZE = REL::Module::GetRuntime() > REL::Module::Runtime::OG ? 526ui32 : 522ui32;
 			static REL::Relocation<SCRIPT_FUNCTION(*)[]> functions{ ID::SCRIPT_FUNCTION::ConsoleFunctions };
 			return { *functions, SIZE };
 		}

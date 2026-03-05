@@ -1914,7 +1914,14 @@ namespace RE::ID
 
 	namespace TESHitEvent
 	{
-		inline constexpr REL::RelocationID GetEventSource{ 989868, 0, 2201886 };
+		inline constexpr REL::RelocationID GetEventSource{ 0, 0, 2201886 };
+		inline constexpr REL::RelocationID GetSingleton{ 989868, 0, 0 };
+	}
+
+	namespace TESEquipEvent
+	{
+		inline constexpr REL::RelocationID GetEventSource{ 0, 2201838, 2201838 };
+		inline constexpr REL::RelocationID GetSingleton{ 485633, 0, 0 };
 	}
 
 	namespace TESInitScriptEvent
@@ -1944,7 +1951,8 @@ namespace RE::ID
 
 	namespace TESMagicEffectApplyEvent
 	{
-		inline constexpr REL::RelocationID GetEventSource{ 1481228, 2201851, 2201851 };
+		inline constexpr REL::RelocationID GetEventSource{ 0, 2201851, 2201851 };
+		inline constexpr REL::RelocationID GetSingleton{ 1481228, 0, 0 };
 	}
 
 	namespace TESNPC
@@ -1983,7 +1991,8 @@ namespace RE::ID
 
 	namespace TESObjectLoadedEvent
 	{
-		inline constexpr REL::RelocationID GetEventSource{ 416662, 2201853, 2201853 };
+		inline constexpr REL::RelocationID GetEventSource{ 0, 2201853, 2201853 };
+		inline constexpr REL::RelocationID GetSingleton{ 416662, 0, 0 };
 	}
 
 	namespace TESObjectREFR

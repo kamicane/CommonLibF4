@@ -49,7 +49,7 @@ namespace REL
 		if (version) {
 			_version = *version;
 			if (_version <= F4SE::RUNTIME_LATEST_OG) {
-				_runtime = Runtime::F4;
+				_runtime = Runtime::OG;
 			}
 			else if (_version <= F4SE::RUNTIME_LATEST_NG) {
 				_runtime = Runtime::NG;

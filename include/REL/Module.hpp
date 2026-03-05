@@ -19,22 +19,10 @@ namespace REL
 		 */
 		enum class Runtime : uint8_t
 		{
-			Unknown = 0,
-
-			/**
-			 * The FALLOUT runtime is a post-Next Generation Update FALLOUT release (version 1.10.980).
-			 */
-			NG = 1 << 0,
-
-			/**
-			 * The FALLOUT runtime is a pre-Next Generation Update FALLOUT release (version 1.10.163 and prior).
-			 */
-			F4 = 1 << 1,
-
-			/**
-			 * The FALLOUT runtime is FALLOUT Anniversary Edition.
-			 */
-			AE = 1 << 2
+			NA = 0,
+			OG = 1,
+			NG = 2,
+			AE = 3
 		};
 		[[nodiscard]] static Module& get()
 		{
@@ -62,14 +50,22 @@ namespace REL
 		[[nodiscard]] static FALLOUT_REL Runtime GetRuntime() noexcept
 		{
 #if (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_AE))
-			return Runtime::F4;
-#elif (!defined(ENABLE_FALLOUT_F4) && !defined(ENABLE_FALLOUT_AE))
+			return Runtime::OG;
+#elif (!defined(ENABLE_FALLOUT_OG) && !defined(ENABLE_FALLOUT_AE))
 			return Runtime::NG;
-#elif (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_F4))
+#elif (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_OG))
 			return Runtime::AE;
 #else
 			return get()._runtime;
 #endif
+		}
+
+		/**
+		 * Returns whether the current FALLOUT runtime is a pre-Nextgen Update Fallout release.
+		 */
+		[[nodiscard]] static FALLOUT_REL bool IsOG() noexcept
+		{
+			return GetRuntime() == Runtime::OG;
 		}
 
 		/**
@@ -78,14 +74,6 @@ namespace REL
 		[[nodiscard]] static FALLOUT_REL bool IsNG() noexcept
 		{
 			return GetRuntime() == Runtime::NG;
-		}
-
-		/**
-		 * Returns whether the current FALLOUT runtime is a pre-Nextgen Update Fallout release.
-		 */
-		[[nodiscard]] static FALLOUT_REL bool IsF4() noexcept
-		{
-			return GetRuntime() == Runtime::F4;
 		}
 
 		/**

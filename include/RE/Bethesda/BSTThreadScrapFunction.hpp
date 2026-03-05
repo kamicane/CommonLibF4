@@ -141,7 +141,7 @@ namespace RE
 
 		static FALLOUT_REL_CONSTEXPR bool IsNextGen() noexcept
 		{
-			return REL::Module::IsNG();
+			return REL::Module::GetRuntime() > REL::Module::Runtime::OG;
 		}
 
 	private:

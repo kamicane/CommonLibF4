@@ -951,15 +951,13 @@ namespace RE
 	public:
 		[[nodiscard]] static EventSource_t* GetEventSource()
 		{
-			constexpr REL::RelocationID relocationID{ 485633, 2201838 }; // skip
-
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsNG()) {
+			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESEquipEvent::GetEventSource);
-				static REL::Relocation<func_t> func{ relocationID };
+				static REL::Relocation<func_t> func{ ID::TESEquipEvent::GetEventSource }; // todo: test
 				return func();
 			}
 			else {
-				static REL::Relocation<EventSource_t*> singleton{ relocationID };
+				static REL::Relocation<EventSource_t*> singleton{ ID::TESEquipEvent::GetSingleton };
 				return singleton.get();
 			}
 		}
@@ -1153,13 +1151,13 @@ namespace RE
 			// The Next-Gen ID doesn't seem to be anywhere near the other TES events.
 			// Maybe it was inlined or moved.
 
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsNG()) {
+			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESHitEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESHitEvent::GetEventSource };
 				return func();
 			}
 			else {
-				static REL::Relocation<EventSource_t*> singleton{ ID::TESHitEvent::GetEventSource };
+				static REL::Relocation<EventSource_t*> singleton{ ID::TESHitEvent::GetSingleton };
 				return singleton.get();
 			}
 		}
@@ -1183,13 +1181,13 @@ namespace RE
 	public:
 		[[nodiscard]] static EventSource_t* GetEventSource()
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsNG()) {
+			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESMagicEffectApplyEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESMagicEffectApplyEvent::GetEventSource };
 				return func();
 			}
 			else {
-				static REL::Relocation<EventSource_t*> singleton{ ID::TESMagicEffectApplyEvent::GetEventSource };
+				static REL::Relocation<EventSource_t*> singleton{ ID::TESMagicEffectApplyEvent::GetSingleton };
 				return singleton.get();
 			}
 		}
@@ -1221,13 +1219,13 @@ namespace RE
 	public:
 		[[nodiscard]] static EventSource_t* GetEventSource()
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsNG()) {
+			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESObjectLoadedEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESObjectLoadedEvent::GetEventSource };
 				return func();
 			}
 			else {
-				static REL::Relocation<EventSource_t*> singleton{ ID::TESObjectLoadedEvent::GetEventSource };
+				static REL::Relocation<EventSource_t*> singleton{ ID::TESObjectLoadedEvent::GetSingleton };
 				return singleton.get();
 			}
 		}

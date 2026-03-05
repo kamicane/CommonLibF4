@@ -19,7 +19,7 @@ include(GNUInstallDirs)
 
 # --- Options ---
 
-option(ENABLE_FALLOUT_F4 "Enable support for Fallout 4 in the dynamic runtime feature." ON)
+option(ENABLE_FALLOUT_OG "Enable support for Fallout 4 in the dynamic runtime feature." ON)
 option(ENABLE_FALLOUT_NG "Enable support for Next-Gen Update Fallout 4 in the dynamic runtime feature." ON)
 option(ENABLE_FALLOUT_AE "Enable support for Anniversary Edition Fallout 4 in the dynamic runtime feature." ON)
 
@@ -30,7 +30,7 @@ option(REX_OPTION_TOML "Enables toml config support for REX." OFF)
 
 message("Options:")
 
-message("\tEnable Fallout 4: ${ENABLE_FALLOUT_F4}")
+message("\tEnable Fallout 4: ${ENABLE_FALLOUT_OG}")
 message("\tEnable Next-Gen Fallout 4: ${ENABLE_FALLOUT_NG}")
 message("\tEnable Anniversary Edition Fallout 4: ${ENABLE_FALLOUT_AE}")
 
@@ -39,7 +39,7 @@ message("\tEnable INI: ${REX_OPTION_INI}")
 message("\tEnable JSON: ${REX_OPTION_JSON}")
 message("\tEnable TOML: ${REX_OPTION_TOML}")
 
-if(NOT ENABLE_FALLOUT_F4 AND NOT ENABLE_FALLOUT_NG AND NOT ENABLE_FALLOUT_AE)
+if(NOT ENABLE_FALLOUT_OG AND NOT ENABLE_FALLOUT_NG AND NOT ENABLE_FALLOUT_AE)
   message(FATAL_ERROR "At least one Fallout runtime must be supported by the CommonLibF4 build.")
 endif()
 
@@ -129,7 +129,7 @@ target_compile_definitions(
   "$<$<BOOL:${REX_OPTION_JSON}>:REX_OPTION_JSON=1>"
   "$<$<BOOL:${REX_OPTION_TOML}>:REX_OPTION_TOML=1>"
   "$<$<BOOL:${F4SE_SUPPORT_XBYAK}>:F4SE_SUPPORT_XBYAK=1>"
-  "$<$<BOOL:${ENABLE_FALLOUT_F4}>:ENABLE_FALLOUT_F4=1>"
+  "$<$<BOOL:${ENABLE_FALLOUT_OG}>:ENABLE_FALLOUT_OG=1>"
   "$<$<BOOL:${ENABLE_FALLOUT_NG}>:ENABLE_FALLOUT_NG=1>"
   "$<$<BOOL:${ENABLE_FALLOUT_AE}>:ENABLE_FALLOUT_AE=1>"
 

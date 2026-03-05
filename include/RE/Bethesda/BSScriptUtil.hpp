@@ -1480,7 +1480,7 @@ namespace RE::BSScript
 		template <class... Args>
 		inline BSTThreadScrapFunction<bool(BSScrapArray<Variable>&)> CreateVariadicThreadScrapFunction(IVirtualMachine* a_vm, Args&&... a_args)
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsNG()) {
+			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				return BSTThreadScrapFunction<bool(BSScrapArray<Variable>&)>([&](BSScrapArray<Variable>& a_out) {
 					a_out = detail::PackVariables(std::forward<Args>(a_args)...);
 					return true;
@@ -1496,7 +1496,7 @@ namespace RE::BSScript
 			requires std::is_same_v<typename std::remove_cv_t<T>::value_type, Variable>
 		inline BSTThreadScrapFunction<bool(BSScrapArray<Variable>&)> CreateAppliedThreadScrapFunction(IVirtualMachine* a_vm, const T& a_args)
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::IsNG()) {
+			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				return BSTThreadScrapFunction<bool(BSScrapArray<Variable>&)>([&](BSScrapArray<Variable>& a_out) {
 					a_out = BSScrapArray<Variable>{ a_args.begin(), a_args.end() };
 					return true;
