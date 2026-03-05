@@ -371,6 +371,9 @@ namespace RE::ID
 		inline constexpr REL::RelocationID BuildSaveGameList{ 0, 0, 2228053 };
 		inline constexpr REL::RelocationID GetSaveDirectoryPath{ 0, 0, 2228028 };
 		inline constexpr REL::RelocationID QueueSaveLoadTask{ 1487308, 2228080, 2228080 };
+		inline constexpr REL::RelocationID SaveGame{ 954817, 2228036, 2228036 };
+		inline constexpr REL::RelocationID LoadGame{ 1245410, 2228039, 2228039 };
+		inline constexpr REL::RelocationID BufferSceneScreenShot{ 1234898, 2228079, 2228079 };
 	}
 
 	namespace BGSScene
@@ -1931,7 +1934,7 @@ namespace RE::ID
 
 	namespace TESLoadGameEvent
 	{
-		inline constexpr REL::RelocationID GetEventSource{ 0, 0, 2201848 };
+		inline constexpr REL::RelocationID GetEventSource{ 823570, 0, 2201848 };
 	}
 
 	namespace TESLocationClearedEvent

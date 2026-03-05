@@ -244,6 +244,7 @@
 #include "RE/Bethesda/TESFaction.hpp"
 #include "RE/Bethesda/TESFile.hpp"
 #include "RE/Bethesda/TESForms.hpp"
+#include "RE/Bethesda/TESLoadGameEvent.hpp"
 #include "RE/Bethesda/TESObjectREFRs.hpp"
 #include "RE/Bethesda/TESPackages.hpp"
 #include "RE/Bethesda/TESRace.hpp"

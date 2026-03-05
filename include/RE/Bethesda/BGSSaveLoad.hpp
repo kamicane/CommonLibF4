@@ -135,6 +135,27 @@ namespace RE
 			return func(this, a_task);
 		}
 
+		void BufferSceneScreenShot()
+		{
+			using func_t = decltype(&BGSSaveLoadManager::BufferSceneScreenShot);
+			static REL::Relocation<func_t> func{ ID::BGSSaveLoadManager::BufferSceneScreenShot };
+			return func(this);
+		}
+
+		bool SaveGame(const char* fileName, std::int32_t deviceID, std::uint32_t outputStats, bool checkForMods)
+		{
+			using func_t = decltype(&BGSSaveLoadManager::SaveGame);
+			static REL::Relocation<func_t> func{ ID::BGSSaveLoadManager::SaveGame };
+			return func(this, fileName, deviceID, outputStats, checkForMods);
+		}
+
+		void LoadGame(const char* fileName, std::int32_t deviceID, std::uint32_t outputStats, bool checkForMods)
+		{
+			using func_t = decltype(&BGSSaveLoadManager::LoadGame);
+			static REL::Relocation<func_t> func{ ID::BGSSaveLoadManager::LoadGame };
+			func(this, fileName, deviceID, outputStats, checkForMods);
+		}
+
 		// members
 		BSTArray<BGSSaveLoadFileEntry*> saveGameList;				  // 008
 		bool isSaveListBuilt;										  // 020
