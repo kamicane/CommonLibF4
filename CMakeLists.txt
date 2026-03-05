@@ -156,6 +156,7 @@ if(MSVC)
     PUBLIC
     /utf-8
     /W4
+    /wd4100 # unreferenced formal parameter
     /MP
     /cgthreads8
     /Zi
