@@ -70,7 +70,7 @@ namespace RE::ID
 
 	namespace ActorEquipManager
 	{
-		inline constexpr REL::RelocationID Singleton{ 1174340, 2690994, 2690994 };
+		inline constexpr REL::RelocationID Singleton{ 1174340, 2690994, 4798287 };
 		inline constexpr REL::RelocationID EquipObject{ 988029, 2231392, 2231392 };
 		inline constexpr REL::RelocationID UnequipObject{ 1292493, 2231395, 2231395 };
 		inline constexpr REL::RelocationID UnequipItem{ 0, 0, 2231399 };
@@ -965,7 +965,7 @@ namespace RE::ID
 		inline constexpr REL::RelocationID SetBendableSplineInfo{ 894306, 2190623, 2190623 };
 		inline constexpr REL::RelocationID SetDisplayNameFromInstanceData{ 457340, 2190179, 2190179 };
 		inline constexpr REL::RelocationID SetOverrideName{ 222303, 2190167, 2190167 };
-		inline constexpr REL::RelocationID SetStartingWorldOrCell{ 603621, 2191213, 2191213 };
+		inline constexpr REL::RelocationID SetStartingWorldOrCell{ 603621, 2191213, 2190506 };
 		inline constexpr REL::RelocationID GetHealthPerc{ 196530, 2190226, 2190226 };
 		inline constexpr REL::RelocationID SetHealthPerc{ 1208294, 2190124, 2190124 };
 		inline constexpr REL::RelocationID ClearFavorite{ 254434, 2190191, 2190191 };
@@ -1458,10 +1458,10 @@ namespace RE::ID
 		inline constexpr REL::RelocationID Singleton{ 553234, 2691945, 4799238 };
 		inline constexpr REL::RelocationID AddMenuToPipboy{ 394568, 2225453, 2225453 };
 		inline constexpr REL::RelocationID ClosedownPipboy{ 731410, 2225480, 2225480 };
-		inline constexpr REL::RelocationID DisablePipboyShader{ 662519, 2225484, 2225484 };
+		inline constexpr REL::RelocationID DisablePipboyShader{ 662519, 2225484, 0 };
 		inline constexpr REL::RelocationID EnablePipboyShader{ 157921, 2225479, 2225484 };
-		inline constexpr REL::RelocationID InitPipboy{ 1477369, 2225454, 2225454 };
-		inline constexpr REL::RelocationID LowerPipboy{ 1444875, 2225457, 2225457 };
+		inline constexpr REL::RelocationID InitPipboy{ 1477369, 2225454, 2225479 };
+		inline constexpr REL::RelocationID LowerPipboy{ 1444875, 2225457, 2225454 };
 		inline constexpr REL::RelocationID OnPipboyCloseAnim{ 1231000, 2225459, 2225457 };
 		inline constexpr REL::RelocationID OnPipboyCloseAnimFailed{ 1362084, 2225459, 2225459 };
 		inline constexpr REL::RelocationID OnPipboyClosed{ 592088, 0, 2225458 };
@@ -1834,10 +1834,10 @@ namespace RE::ID
 
 	namespace TESDataHandler
 	{
-		inline constexpr REL::RelocationID Singleton{ 711558, 2688883, 2688883 };
+		inline constexpr REL::RelocationID Singleton{ 711558, 2688883, 4796135 };
 		inline constexpr REL::RelocationID AddFormToDataHandler{ 350112, 2192271, 2192271 };
 		inline constexpr REL::RelocationID CheckModsLoaded{ 1432894, 2192323, 2192323 };
-		inline constexpr REL::RelocationID CreateReferenceAtLocation{ 500304, 500304, 500304 };
+		inline constexpr REL::RelocationID CreateReferenceAtLocation{ 500304, 500304, 2192301 };
 		inline constexpr REL::RelocationID IsFormIDInuse{ 1448838, 2192351, 2192351 };
 	}
 
@@ -1936,7 +1936,7 @@ namespace RE::ID
 		inline constexpr REL::RelocationID CalculateCurrentFormList{ 507405, 2193259, 2193259 };
 		inline constexpr REL::RelocationID CalculateCurrentFormListForRef{ 507405, 2193260, 2193260 };
 		inline constexpr REL::RelocationID GetUseAll{ 233875, 2193253, 2193253 };
-		inline constexpr REL::RelocationID RemoveAllScriptAddedLeveledObjects{ 1500052, 0, 2193273 };
+		inline constexpr REL::RelocationID RemoveAllScriptAddedLeveledObjects{ 1500052, 0, 0 };
 	}
 
 	namespace TESLoadGameEvent
@@ -2166,7 +2166,7 @@ namespace RE::ID
 		inline constexpr REL::RelocationID GetSelectedWorkshopMenuNode{ 763948, 2195024, 2195024 };
 		inline constexpr REL::RelocationID InitializePlacementReference{ 1577199, 0, 0 };
 		inline constexpr REL::RelocationID IsLocationWithinBuildableArea{ 990965, 0, 2194956 };
-		inline constexpr REL::RelocationID IsWorkshopItem{ 1386903, 2194912, 2194912 };
+		inline constexpr REL::RelocationID IsWorkshopItem{ 1386903, 2194912, 0 };
 		inline constexpr REL::RelocationID PlaceCurrentReference{ 1058211, 0, 2195155 };
 		inline constexpr REL::RelocationID RegisterForItemDestroyed{ 1367004, 0, 2194930 };
 		inline constexpr REL::RelocationID RegisterForItemMoved{ 835323, 0, 2194932 };
