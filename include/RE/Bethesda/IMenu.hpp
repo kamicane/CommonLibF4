@@ -762,14 +762,14 @@ namespace RE
 		{
 			using func_t = decltype(&GameMenuBase::TransferCachedShaderFXQuadsForRenderer);
 			static REL::Relocation<func_t> func{ ID::GameMenuBase::TransferCachedShaderFXQuadsForRenderer };
-			return func(this, a_rendererName);
+			func(this, a_rendererName);
 		}
 
 		virtual void SetViewportRect(const NiRect<float>& a_viewportRect) override // 12
 		{
 			using func_t = decltype(&GameMenuBase::SetViewportRect);
 			static REL::Relocation<func_t> func{ ID::GameMenuBase::SetViewportRect };
-			return func(this, a_viewportRect);
+			func(this, a_viewportRect);
 		}
 
 		// add
@@ -777,7 +777,7 @@ namespace RE
 		{
 			using func_t = decltype(&GameMenuBase::AppendShaderFXInfos);
 			static REL::Relocation<func_t> func{ ID::GameMenuBase::AppendShaderFXInfos };
-			return func(this, a_colorFXInfos, a_backgroundFXInfos);
+			func(this, a_colorFXInfos, a_backgroundFXInfos);
 		}
 
 		void SetUpButtonBar(BSGFxShaderFXTarget& a_parentObject, const char* a_buttonBarPath, HUDColorTypes a_colorType)
