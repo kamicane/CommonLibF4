@@ -8,11 +8,16 @@ const OG_RTTI_HEADER = './.tmp_OG_IDS/RTTI_IDs.h';
 const AE_RTTI_HEADER = './.tmp_XSE_AE_IDS/IDs_RTTI.h';
 const NG_RTTI_HEADER = './.tmp_NG_IDS/RTTI_IDs.h';
 
+const OG_NiRTTI_HEADER = './.tmp_OG_IDS/NiRTTI_IDs.h';
+const AE_NiRTTI_HEADER = './.tmp_XSE_AE_IDS/IDs_NiRTTI.h';
+const NG_NiRTTI_HEADER = './.tmp_NG_IDS/NiRTTI_IDs.h';
+
 const OG_VTABLE_HEADER = './.tmp_OG_IDS/VTABLE_IDs.h';
 const AE_VTABLE_HEADER = './.tmp_XSE_AE_IDS/IDs_VTABLE.h';
 const NG_VTABLE_HEADER = './.tmp_NG_IDS/VTABLE_IDs.h';
 
 const LOCAL_RTTI_HEADER = './include/RE/RTTI_IDs.hpp';
+const LOCAL_NiRTTI_HEADER = './include/RE/NiRTTI_IDs.hpp';
 const LOCAL_VTABLE_HEADER = './include/RE/VTABLE_IDs.hpp';
 
 const OUT_DIR = './.tmp_patched_ids';
@@ -205,8 +210,8 @@ async function parseVTABLEHeaders() {
 
 	ensureOut();
 	fs.writeFileSync(path.join(OUT_DIR, 'og_vtable_map.json'), JSON.stringify(mapToObject(ogMap), null, 2));
-	fs.writeFileSync(path.join(OUT_DIR, 'ae_vtable_map.json'), JSON.stringify(mapToObject(aeMap), null, 2));
 	fs.writeFileSync(path.join(OUT_DIR, 'ng_vtable_map.json'), JSON.stringify(mapToObject(ngMap), null, 2));
+	fs.writeFileSync(path.join(OUT_DIR, 'ae_vtable_map.json'), JSON.stringify(mapToObject(aeMap), null, 2));
 	fs.writeFileSync(path.join(OUT_DIR, 'local_vtable_map.json'), JSON.stringify(mapToObject(localMap), null, 2));
 
 	const combinedMap = new Map();
@@ -295,30 +300,6 @@ async function parseRTTIHeaders() {
 		const ogEntry = ogMap.get(name);
 		const ngEntry = ngMap.get(name);
 
-		if (ngEntry == null && localEntry.ng != null) {
-			console.warn(`NG--: ${name}`);
-		}
-
-		if (ogEntry != null && ogEntry !== localEntry.og) {
-			console.warn(`OG!=: ${name}`);
-		}
-
-		if (ngEntry != null && localEntry.ng != null && ngEntry !== localEntry.ng) {
-			console.warn(`NG!=: ${name} ${ngEntry} => ${localEntry.ng}`);
-		}
-
-		if (ngEntry != null && localEntry.ng == null && localEntry.og !== ngEntry) {
-			console.warn(`NG++ ${name} ${ngEntry}`);
-		}
-
-		if (ngEntry != null && aeEntry != null && aeEntry === ngEntry) {
-			// console.warn(`NG==`);
-		}
-
-		if (ogEntry != null && aeEntry != null && aeEntry === ogEntry) {
-			// console.warn(`===`);
-		}
-
 		const newEntry = { og: localEntry.og };
 
 		if (aeEntry != null) {
@@ -364,4 +345,75 @@ namespace RE
 	console.log('Wrote maps to', OUT_DIR)
 }
 
+async function parseNiRTTIHeaders() {
+	const ogMap = await buildSingleIdRTTIMap(OG_NiRTTI_HEADER);
+	const aeMap = await buildSingleIdRTTIMap(AE_NiRTTI_HEADER);
+	const ngMap = await buildSingleIdRTTIMap(NG_NiRTTI_HEADER);
+
+	const localMap = await buildMultiIdRTTIMap(LOCAL_NiRTTI_HEADER);
+
+	ensureOut();
+	fs.writeFileSync(path.join(OUT_DIR, 'og_nirtti_map.json'), JSON.stringify(mapToObject(ogMap), null, 2));
+	fs.writeFileSync(path.join(OUT_DIR, 'ae_nirtti_map.json'), JSON.stringify(mapToObject(aeMap), null, 2));
+	fs.writeFileSync(path.join(OUT_DIR, 'ng_nirtti_map.json'), JSON.stringify(mapToObject(ngMap), null, 2));
+
+	fs.writeFileSync(path.join(OUT_DIR, 'local_nirtti_map.json'), JSON.stringify(mapToObject(localMap), null, 2));
+
+	// Build combined map using localMap as base; add `ae` when present in aeMap
+	let count = 0;
+	const combinedMap = new Map();
+
+	for (const [name, localEntry] of localMap) {
+
+		const aeEntry = aeMap.get(name);
+		const ogEntry = ogMap.get(name);
+		const ngEntry = ngMap.get(name);
+
+		const newEntry = { og: localEntry.og };
+
+		if (aeEntry != null) {
+			newEntry.ae = aeEntry;
+		}
+
+		if (ngEntry != null) {
+			newEntry.ng = ngEntry;
+		}
+
+		combinedMap.set(name, newEntry);
+	}
+
+	fs.writeFileSync(path.join(OUT_DIR, 'combined_map.json'), JSON.stringify(mapToObject(combinedMap), null, 2));
+
+	let header = `#pragma once
+
+namespace RE
+{
+	namespace Ni_RTTI
+	{
+`
+
+	for (const [name, entry] of combinedMap) {
+		if (entry.ae != null) {
+			header += `		inline constexpr REL::RelocationID ${name}{ ${entry.og}, ${entry.ng ?? 0}, ${entry.ae} };\n`
+		}
+
+		else if (entry.ng != null) {
+			header += `		inline constexpr REL::RelocationID ${name}{ ${entry.og}, ${entry.ng} };\n`
+		}
+
+		else {
+			header += `		inline constexpr REL::ID ${name}{ ${entry.og} };\n`
+		}
+	}
+
+	header += `	}
+}`
+
+	fs.writeFileSync(path.join(OUT_DIR, 'NiRTTI_IDs.hpp'), header, 'utf-8')
+
+	console.log('Wrote maps to', OUT_DIR)
+}
+
+parseNiRTTIHeaders();
+parseRTTIHeaders();
 parseVTABLEHeaders();
