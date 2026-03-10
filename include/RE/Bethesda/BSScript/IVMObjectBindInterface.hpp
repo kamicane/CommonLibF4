@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 
 namespace RE::BSScript

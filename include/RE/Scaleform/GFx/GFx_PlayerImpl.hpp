@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/Scaleform/GFx/GFx_ASMovieRootBase.hpp"
+#include "RE/Scaleform/GFx/GFx_ASString.hpp"
 #include "RE/Scaleform/GFx/GFx_Player.hpp"
 #include "RE/Scaleform/Render/Render_ScreenToWorld.hpp"
 

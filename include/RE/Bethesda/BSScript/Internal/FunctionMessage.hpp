@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BSScript/Internal/IFuncCallQuery.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 
 namespace RE::BSScript

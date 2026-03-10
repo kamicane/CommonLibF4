@@ -2,6 +2,7 @@
 
 #include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSInputEventReceiver.hpp"
+#include "RE/Bethesda/BSInputEventUser.hpp"
 #include "RE/Bethesda/BSPointerHandle.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTEvent.hpp"
@@ -9,6 +10,7 @@
 #include "RE/Bethesda/BSTSingleton.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 #include "RE/Havok/hkRefPtr.hpp"
+#include "RE/Havok/hknpBodyId.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 #include "RE/NetImmerse/NiQuaternion.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"

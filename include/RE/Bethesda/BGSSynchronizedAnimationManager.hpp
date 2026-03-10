@@ -1,7 +1,9 @@
 #pragma once
 
+#include "RE/Bethesda/BSPointerHandle.hpp"
 #include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
+#include "RE/Bethesda/BSTSmartPointer.hpp"
 
 namespace RE
 {
@@ -16,8 +18,8 @@ namespace RE
 		  public BSTSingletonSDM<BGSSynchronizedAnimationManager> // 10
 	{
 	public:
-		inline static constexpr auto RTTI{ RTTI::BGSSynchronizedAnimationManager };
-		inline static constexpr auto VTABLE{ VTABLE::BGSSynchronizedAnimationManager };
+		static constexpr auto RTTI{ RTTI::BGSSynchronizedAnimationManager };
+		static constexpr auto VTABLE{ VTABLE::BGSSynchronizedAnimationManager };
 
 		virtual ~BGSSynchronizedAnimationManager(); // 00
 

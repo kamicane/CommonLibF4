@@ -1,5 +1,8 @@
 #pragma once
 
+#include "REL/ID.hpp"
+#include "REL/Relocation.hpp"
+
 struct __type_info_node; // NOLINT(bugprone-reserved-identifier)
 
 namespace RE::msvc

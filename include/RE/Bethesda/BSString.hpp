@@ -297,27 +297,27 @@ namespace RE
 
 		void clear() { set_cstr(EMPTY); }
 
-		[[nodiscard]] friend auto operator==(const BSStringT& a_lhs, const BSStringT& a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const BSStringT& a_lhs, const BSStringT& a_rhs) noexcept
 		{
 			return stricmp(a_lhs, a_rhs) == std::strong_ordering::equal;
 		}
 
-		[[nodiscard]] friend auto operator==(const BSStringT& a_lhs, std::basic_string_view<value_type> a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const BSStringT& a_lhs, std::basic_string_view<value_type> a_rhs) noexcept
 		{
 			return stricmp(a_lhs, a_rhs) == std::strong_ordering::equal;
 		}
 
-		[[nodiscard]] friend auto operator==(std::basic_string_view<value_type> a_lhs, const BSStringT& a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(std::basic_string_view<value_type> a_lhs, const BSStringT& a_rhs) noexcept
 		{
 			return stricmp(a_lhs, a_rhs) == std::strong_ordering::equal;
 		}
 
-		[[nodiscard]] friend auto operator==(const BSStringT& a_lhs, const_pointer a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const BSStringT& a_lhs, const_pointer a_rhs) noexcept
 		{
 			return strnicmp(a_lhs.data(), a_rhs, a_lhs.size()) == std::strong_ordering::equal;
 		}
 
-		[[nodiscard]] friend auto operator==(const_pointer a_lhs, const BSStringT& a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const_pointer a_lhs, const BSStringT& a_rhs) noexcept
 		{
 			return strnicmp(a_lhs, a_rhs.data(), a_rhs.size()) == std::strong_ordering::equal;
 		}

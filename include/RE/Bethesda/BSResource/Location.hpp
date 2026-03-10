@@ -2,6 +2,7 @@
 
 #include "RE/Bethesda/BSResource/BSResourceEnums.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
+#include "RE/Bethesda/MemoryManager.hpp"
 
 namespace RE::BSResource
 {

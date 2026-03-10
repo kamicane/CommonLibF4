@@ -165,27 +165,27 @@ namespace RE
 			[[nodiscard]] size_type size() const noexcept { return _data ? _data->size() : 0; }
 			[[nodiscard]] size_type length() const noexcept { return _data ? _data->length() : 0; }
 
-			[[nodiscard]] friend auto operator==(const BSFixedString& a_lhs, const BSFixedString& a_rhs) noexcept
+			[[nodiscard]] friend bool operator==(const BSFixedString& a_lhs, const BSFixedString& a_rhs) noexcept
 			{
 				return hash_equals(a_lhs, a_rhs) || strcmp(a_lhs, a_rhs) == std::strong_ordering::equal;
 			}
 
-			[[nodiscard]] friend auto operator==(const BSFixedString& a_lhs, std::basic_string_view<value_type> a_rhs) noexcept
+			[[nodiscard]] friend bool operator==(const BSFixedString& a_lhs, std::basic_string_view<value_type> a_rhs) noexcept
 			{
 				return strcmp(a_lhs, a_rhs) == std::strong_ordering::equal;
 			}
 
-			[[nodiscard]] friend auto operator==(std::basic_string_view<value_type> a_lhs, const BSFixedString& a_rhs) noexcept
+			[[nodiscard]] friend bool operator==(std::basic_string_view<value_type> a_lhs, const BSFixedString& a_rhs) noexcept
 			{
 				return strcmp(a_lhs, a_rhs) == std::strong_ordering::equal;
 			}
 
-			[[nodiscard]] friend auto operator==(const BSFixedString& a_lhs, const_pointer a_rhs) noexcept
+			[[nodiscard]] friend bool operator==(const BSFixedString& a_lhs, const_pointer a_rhs) noexcept
 			{
 				return strncmp(a_lhs.data(), a_rhs, a_lhs.size()) == std::strong_ordering::equal;
 			}
 
-			[[nodiscard]] friend auto operator==(const_pointer a_lhs, const BSFixedString& a_rhs) noexcept
+			[[nodiscard]] friend bool operator==(const_pointer a_lhs, const BSFixedString& a_rhs) noexcept
 			{
 				return strncmp(a_lhs, a_rhs.data(), a_rhs.size()) == std::strong_ordering::equal;
 			}
@@ -489,27 +489,27 @@ namespace RE
 		[[nodiscard]] size_type size() const noexcept { return _data.size(); }
 		[[nodiscard]] size_type length() const noexcept { return _data.length(); }
 
-		[[nodiscard]] friend auto operator==(const BGSLocalizedString& a_lhs, const BGSLocalizedString& a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const BGSLocalizedString& a_lhs, const BGSLocalizedString& a_rhs) noexcept
 		{
 			return a_lhs._data == a_rhs._data;
 		}
 
-		[[nodiscard]] friend auto operator==(const BGSLocalizedString& a_lhs, std::basic_string_view<value_type> a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const BGSLocalizedString& a_lhs, std::basic_string_view<value_type> a_rhs) noexcept
 		{
 			return a_lhs._data == a_rhs;
 		}
 
-		[[nodiscard]] friend auto operator==(std::basic_string_view<value_type> a_lhs, const BGSLocalizedString& a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(std::basic_string_view<value_type> a_lhs, const BGSLocalizedString& a_rhs) noexcept
 		{
 			return a_lhs == a_rhs._data;
 		}
 
-		[[nodiscard]] friend auto operator==(const BGSLocalizedString& a_lhs, const_pointer a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const BGSLocalizedString& a_lhs, const_pointer a_rhs) noexcept
 		{
 			return a_lhs._data == a_rhs;
 		}
 
-		[[nodiscard]] friend auto operator==(const_pointer a_lhs, const BGSLocalizedString& a_rhs) noexcept
+		[[nodiscard]] friend bool operator==(const_pointer a_lhs, const BGSLocalizedString& a_rhs) noexcept
 		{
 			return a_lhs == a_rhs._data;
 		}

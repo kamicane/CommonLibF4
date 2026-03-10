@@ -1,73 +1,73 @@
 #pragma once
 
-#include <algorithm>
-#include <array>
-#include <bit>
-#include <bitset>
-#include <cassert>
-#include <cmath>
-#include <concepts>
-#include <cstdarg>
-#include <cstddef>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <cwchar>
-#include <cwctype>
-#include <exception>
-#include <execution>
-#include <filesystem>
-#include <format>
-#include <fstream>
-#include <functional>
-#include <intrin.h>
-#include <iomanip>
-#include <ios>
-#include <istream>
-#include <iterator>
-#include <limits>
-#include <locale>
-#include <map>
-#include <memory>
-#include <mutex>
-#include <new>
-#include <numeric>
-#include <optional>
-#include <random>
-#include <ranges>
-#include <regex>
-#include <set>
-#include <source_location>
-#include <span>
-#include <sstream>
-#include <stack>
-#include <stdexcept>
-#include <string>
-#include <string_view>
-#include <system_error>
-#include <thread>
-#include <tuple>
-#include <type_traits>
-#include <typeinfo>
-#include <utility>
-#include <variant>
-#include <vector>
+#include <algorithm> // IWYU pragma: export
+#include <array> // IWYU pragma: export
+#include <bit> // IWYU pragma: export
+#include <bitset> // IWYU pragma: export
+#include <cassert> // IWYU pragma: export
+#include <cmath> // IWYU pragma: export
+#include <concepts> // IWYU pragma: export
+#include <cstdarg> // IWYU pragma: export
+#include <cstddef> // IWYU pragma: export
+#include <cstdint> // IWYU pragma: export
+#include <cstdio> // IWYU pragma: export
+#include <cstdlib> // IWYU pragma: export
+#include <cstring> // IWYU pragma: export
+#include <ctime> // IWYU pragma: export
+#include <cwchar> // IWYU pragma: export
+#include <cwctype> // IWYU pragma: export
+#include <exception> // IWYU pragma: export
+#include <execution> // IWYU pragma: export
+#include <filesystem> // IWYU pragma: export
+#include <format> // IWYU pragma: export
+#include <fstream> // IWYU pragma: export
+#include <functional> // IWYU pragma: export
+#include <intrin.h> // IWYU pragma: export
+#include <iomanip> // IWYU pragma: export
+#include <ios> // IWYU pragma: export
+#include <istream> // IWYU pragma: export
+#include <iterator> // IWYU pragma: export
+#include <limits> // IWYU pragma: export
+#include <locale> // IWYU pragma: export
+#include <map> // IWYU pragma: export
+#include <memory> // IWYU pragma: export
+#include <mutex> // IWYU pragma: export
+#include <new> // IWYU pragma: export
+#include <numeric> // IWYU pragma: export
+#include <optional> // IWYU pragma: export
+#include <random> // IWYU pragma: export
+#include <ranges> // IWYU pragma: export
+#include <regex> // IWYU pragma: export
+#include <set> // IWYU pragma: export
+#include <source_location> // IWYU pragma: export
+#include <span> // IWYU pragma: export
+#include <sstream> // IWYU pragma: export
+#include <stack> // IWYU pragma: export
+#include <stdexcept> // IWYU pragma: export
+#include <string> // IWYU pragma: export
+#include <string_view> // IWYU pragma: export
+#include <system_error> // IWYU pragma: export
+#include <thread> // IWYU pragma: export
+#include <tuple> // IWYU pragma: export
+#include <type_traits> // IWYU pragma: export
+#include <typeinfo> // IWYU pragma: export
+#include <utility> // IWYU pragma: export
+#include <variant> // IWYU pragma: export
+#include <vector> // IWYU pragma: export
 
 static_assert(
 	std::is_integral_v<std::time_t> && sizeof(std::time_t) == sizeof(std::size_t),
 	"wrap std::time_t instead");
 
-#include "REX/REX.hpp"
-#include "REX/W32.hpp"
+#include "REX/REX.hpp" // IWYU pragma: export
+#include "REX/W32.hpp" // IWYU pragma: export
 
-#include "REX/W32/KERNEL32.hpp"
-#include "REX/W32/USER32.hpp"
+#include "REX/W32/KERNEL32.hpp" // IWYU pragma: export
+#include "REX/W32/USER32.hpp" // IWYU pragma: export
 
 #pragma warning(push)
-#include <mmio/mmio.hpp>
-#include <spdlog/spdlog.h>
+#include <mmio/mmio.hpp> // IWYU pragma: export
+#include <spdlog/spdlog.h> // IWYU pragma: export
 #pragma warning(pop)
 
 namespace F4SE
@@ -703,21 +703,19 @@ namespace REL
 	namespace stl = F4SE::stl;
 }
 
-#define RELOCATION_ID(a_f4, a_ng) REL::RelocationID(a_f4, a_ng)
+// #define RELOCATION_ID(a_f4, a_ng) REL::RelocationID(a_f4, a_ng)
 
-#include "REL/REL.hpp"
+#include "REX/PS4.hpp" // IWYU pragma: export
 
-#include "REX/PS4.hpp"
+#include "REL/REL.hpp" // IWYU pragma: export
 
-#include "RE/IDs.hpp"
-#include "RE/NiRTTI_IDs.hpp"
-#include "RE/RTTI_IDs.hpp"
-#include "RE/VTABLE_IDs.hpp"
+#include "RE/IDs.hpp" // IWYU pragma: export
+#include "RE/NiRTTI_IDs.hpp" // IWYU pragma: export
+#include "RE/RTTI_IDs.hpp" // IWYU pragma: export
+#include "RE/VTABLE_IDs.hpp" // IWYU pragma: export
 
-#include "RE/Bethesda/BSCoreTypes.hpp"
+#include "RE/Bethesda/BSCoreTypes.hpp" // IWYU pragma: export
 
-#include "RE/msvc/functional.hpp"
-#include "RE/msvc/memory.hpp"
-#include "RE/msvc/typeinfo.hpp"
-
-#undef cdecl // Workaround for Clang.
+#include "RE/msvc/functional.hpp" // IWYU pragma: export
+#include "RE/msvc/memory.hpp" // IWYU pragma: export
+#include "RE/msvc/typeinfo.hpp" // IWYU pragma: export

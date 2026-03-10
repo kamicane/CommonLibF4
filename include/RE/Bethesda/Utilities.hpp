@@ -2,6 +2,7 @@
 
 #include "RE/Bethesda/Actor.hpp"
 #include "RE/Bethesda/BSFixedString.hpp"
+#include "RE/Bethesda/BSTObjectArena.hpp"
 #include "RE/Bethesda/TESBoundObjects.hpp"
 #include "RE/Bethesda/bhkPickData.hpp"
 #include "RE/NetImmerse/NiAVObject.hpp"

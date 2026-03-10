@@ -1,5 +1,8 @@
 #pragma once
 
+#include "RE/Bethesda/BSInputEnableManager.hpp"
+#include "RE/Bethesda/Events.hpp"
+
 namespace RE
 {
 	class __declspec(novtable) MenuTopicManager

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "REL/Common.hpp"
 #include "REL/IAT.hpp"
 #include "REL/ID.hpp"
 #include "REL/IDDB.hpp"

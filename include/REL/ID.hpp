@@ -37,15 +37,15 @@ namespace REL
 		constexpr RelocationID() noexcept = default;
 
 		explicit constexpr RelocationID(
-		    [[maybe_unused]] std::uint64_t a_ogID,
-		    [[maybe_unused]] std::uint64_t a_ngID) noexcept
+			[[maybe_unused]] std::uint64_t a_ogID,
+			[[maybe_unused]] std::uint64_t a_ngID) noexcept
 		{
-	#ifdef ENABLE_FALLOUT_OG
-		    _ogID = a_ogID;
-	#endif
-	#ifdef ENABLE_FALLOUT_NG
-		    _ngID = a_ngID;
-	#endif
+#ifdef ENABLE_FALLOUT_OG
+			_ogID = a_ogID;
+#endif
+#ifdef ENABLE_FALLOUT_NG
+			_ngID = a_ngID;
+#endif
 		}
 
 		explicit constexpr RelocationID(
@@ -76,7 +76,7 @@ namespace REL
 			return thisID ? IDDB::get().id2offset(thisID) : 0;
 		}
 
-		[[nodiscard]] FALLOUT_REL std::uint64_t id() const noexcept
+		[[nodiscard]] inline std::uint64_t id() const noexcept
 		{
 			switch (Module::GetRuntime()) {
 #ifdef ENABLE_FALLOUT_NG
@@ -96,7 +96,7 @@ namespace REL
 			}
 		}
 
-		[[nodiscard]] FALLOUT_REL explicit operator ID() const noexcept
+		[[nodiscard]] inline explicit operator ID() const noexcept
 		{
 			return ID(id());
 		}
@@ -174,7 +174,7 @@ namespace REL
 #endif
 
 #ifdef ENABLE_FALLOUT_AE
-	std::uint64_t _aeID{ 0 };
+		std::uint64_t _aeID{ 0 };
 #endif
 	};
 }

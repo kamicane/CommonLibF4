@@ -3,6 +3,7 @@
 #include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSLock.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
+#include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 #include "RE/Bethesda/UserEvents.hpp"

@@ -3,8 +3,10 @@
 #include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSLock.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
+#include "RE/Bethesda/BSSCaleformManager.hpp"
 #include "RE/Bethesda/UIShaderFXInfo.hpp"
 #include "RE/NetImmerse/NiColor.hpp"
+#include "RE/NetImmerse/NiObject.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
 

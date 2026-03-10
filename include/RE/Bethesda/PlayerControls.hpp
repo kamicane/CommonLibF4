@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BGSDefaultObjectManager.hpp"
 #include "RE/Bethesda/BSInputEventReceiver.hpp"
 #include "RE/Bethesda/BSInputEventUser.hpp"
 #include "RE/Bethesda/BSPointerHandle.hpp"
@@ -8,6 +9,7 @@
 #include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
 #include "RE/Bethesda/IMovementInterface.hpp"
+#include "RE/Bethesda/Settings.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 
 namespace RE

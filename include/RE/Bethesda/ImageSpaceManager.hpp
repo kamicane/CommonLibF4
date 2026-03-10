@@ -4,6 +4,7 @@
 #include "RE/NetImmerse/NiColor.hpp"
 #include "RE/NetImmerse/NiRect.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
+#include "RE/NetImmerse/NiTArray.hpp"
 
 namespace RE
 {

@@ -1,5 +1,8 @@
 #pragma once
 
+#include "RE/Bethesda/BGSEntryPoint.hpp"
+#include "RE/Bethesda/BGSStoryManagerTreeForm.hpp"
+
 namespace RE
 {
 	enum class PERK_ENTRY_TYPE

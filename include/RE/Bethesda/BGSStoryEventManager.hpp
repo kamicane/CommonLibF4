@@ -5,6 +5,8 @@
 #include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTHashMap.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
+#include "RE/Bethesda/TESForms.hpp"
+#include "RE/Bethesda/TESObjectREFRs.hpp"
 
 namespace RE
 {

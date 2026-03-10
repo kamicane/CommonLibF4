@@ -47,7 +47,7 @@ namespace REL
 		/**
 		 * Get the type of runtime the currently-loaded FALLOUT module is.
 		 */
-		[[nodiscard]] static FALLOUT_REL Runtime GetRuntime() noexcept
+		[[nodiscard]] static inline Runtime GetRuntime() noexcept
 		{
 #if (!defined(ENABLE_FALLOUT_NG) && !defined(ENABLE_FALLOUT_AE))
 			return Runtime::OG;
@@ -63,7 +63,7 @@ namespace REL
 		/**
 		 * Returns whether the current FALLOUT runtime is a pre-Nextgen Update Fallout release.
 		 */
-		[[nodiscard]] static FALLOUT_REL bool IsOG() noexcept
+		[[nodiscard]] static inline bool IsOG() noexcept
 		{
 			return GetRuntime() == Runtime::OG;
 		}
@@ -71,7 +71,7 @@ namespace REL
 		/**
 		 * Returns whether the current FALLOUT runtime is a post-Nextgen Update Fallout release.
 		 */
-		[[nodiscard]] static FALLOUT_REL bool IsNG() noexcept
+		[[nodiscard]] static inline bool IsNG() noexcept
 		{
 			return GetRuntime() == Runtime::NG;
 		}
@@ -79,7 +79,7 @@ namespace REL
 		/**
 		 * Returns whether the current FALLOUT runtime is Anniversary Edition Fallout release.
 		 */
-		[[nodiscard]] static FALLOUT_REL bool IsAE() noexcept
+		[[nodiscard]] static inline bool IsAE() noexcept
 		{
 			return GetRuntime() == Runtime::AE;
 		}

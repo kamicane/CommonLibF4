@@ -8,6 +8,8 @@
 #include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/BSTPoint.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
+#include "RE/Bethesda/IMenu.hpp"
+#include "RE/NetImmerse/NiRect.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
 
 namespace RE

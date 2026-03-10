@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/Bethesda/BSTFreeList.hpp"
+#include "RE/Bethesda/MemoryManager.hpp"
 
 namespace RE
 {

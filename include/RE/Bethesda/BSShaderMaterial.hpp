@@ -1,7 +1,9 @@
 #pragma once
 
+#include "RE/Bethesda/BGSTextureSet.hpp"
 #include "RE/Bethesda/BSGraphics.hpp"
 #include "RE/Bethesda/BSLock.hpp"
+#include "RE/Bethesda/BSShaderProperty.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 #include "RE/Bethesda/BSTextureDB.hpp"
 #include "RE/NetImmerse/NiColor.hpp"

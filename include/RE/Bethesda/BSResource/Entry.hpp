@@ -5,6 +5,7 @@
 #include "RE/Bethesda/BSLock.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
+#include "RE/Bethesda/BSResource/BSResourceEnums.hpp"
 
 namespace RE::BSResource
 {

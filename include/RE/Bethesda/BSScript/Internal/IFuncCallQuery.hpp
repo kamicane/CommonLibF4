@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BSScript/ObjectTypeInfo.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 
 namespace RE::BSScript::Internal

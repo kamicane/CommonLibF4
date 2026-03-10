@@ -5,6 +5,7 @@
 #include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/BSTHashMap.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
+#include "RE/Bethesda/Events.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
 
 namespace RE

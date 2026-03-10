@@ -1,8 +1,11 @@
 #pragma once
 
+#include "RE/Bethesda/Actor.hpp"
 #include "RE/Bethesda/BSExtraData.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/MemoryManager.hpp"
+#include "RE/Bethesda/bhkCharacterController.hpp"
+#include "RE/Havok/hknpShape.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 
 namespace RE

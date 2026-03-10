@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/IMenu.hpp"
 namespace RE
 {
 	namespace SendHUDMessage

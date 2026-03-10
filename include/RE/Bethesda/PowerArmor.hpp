@@ -3,6 +3,7 @@
 #include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/Events.hpp"
 #include "RE/Bethesda/HUDModes.hpp"
+#include "RE/Bethesda/PlayerCharacter.hpp"
 
 namespace RE
 {

@@ -173,7 +173,7 @@ if(MSVC)
     /Zc:templateScope
     /Zc:throwingNew
     "$<$<CONFIG:DEBUG>:>"
-    "$<$<CONFIG:RELEASE>:/O2;/GL;/Gw;/Oi;/Qpar>;/Zc:inline;/JMC-"
+    "$<$<CONFIG:RELEASE>:/O2;/GL;/Gw;/Oi;/Qpar;/Zc:inline;/JMC->"
   )
 endif()
 

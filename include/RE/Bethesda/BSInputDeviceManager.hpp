@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSTHashMap.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
 #include "RE/Bethesda/InputDevice.hpp"

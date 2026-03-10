@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/TESBoundObjects.hpp"
 #include "RE/Bethesda/TESObjectREFRs.hpp"
 
 namespace RE

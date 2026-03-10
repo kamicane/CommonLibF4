@@ -1,5 +1,8 @@
 #pragma once
 
+#include "RE/Bethesda/BSFixedString.hpp"
+#include "RE/NetImmerse/NiSmartPointer.hpp"
+
 namespace RE
 {
 	class bhkWorld;

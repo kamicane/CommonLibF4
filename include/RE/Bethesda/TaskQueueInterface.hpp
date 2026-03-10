@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/TESObjectREFRs.hpp"
 namespace RE
 {
 	enum class DEFAULT_OBJECT;

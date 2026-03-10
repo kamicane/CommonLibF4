@@ -9,6 +9,7 @@
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 #include "RE/Bethesda/BSTTuple.hpp"
 #include "RE/Bethesda/MemoryManager.hpp"
+// #include "RE/Bethesda/TESForms.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 #include "RE/NetImmerse/NiRefObject.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
@@ -609,7 +610,7 @@ namespace RE
 					newArray[i] = array[i];
 				}
 				BGSTypedKeywordValue<TYPE> newValue;
-				newValue.keywordIndex = detail::BGSKeywordGetIndexForTypedKeyword(a_keyword, BGSKeyword::KeywordType::kAttachPoint);
+				newValue.keywordIndex = detail::BGSKeywordGetIndexForTypedKeyword(a_keyword, KeywordType::kAttachPoint);
 				newArray[size] = newValue;
 				mm.Deallocate(array, false);
 				array = newArray;

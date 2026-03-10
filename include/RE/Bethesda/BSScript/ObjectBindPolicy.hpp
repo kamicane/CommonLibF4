@@ -4,6 +4,7 @@
 #include "RE/Bethesda/BSLock.hpp"
 #include "RE/Bethesda/BSScript/IVMObjectBindInterface.hpp"
 #include "RE/Bethesda/BSStorage.hpp"
+#include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTHashMap.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 

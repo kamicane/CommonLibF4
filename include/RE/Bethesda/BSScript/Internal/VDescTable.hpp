@@ -2,6 +2,7 @@
 
 #include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSScript/TypeInfo.hpp"
+#include "RE/Bethesda/BSTTuple.hpp"
 
 namespace RE::BSScript
 {

@@ -10,6 +10,7 @@ namespace RE
 {
 	class TESImageSpaceModifier;
 	class TESImageSpaceModifierForm;
+	class ImageSpaceModifierInstanceForm;
 
 	class ImageSpaceModifierFinder
 	{

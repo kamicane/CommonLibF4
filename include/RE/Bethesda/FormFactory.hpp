@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/Bethesda/TESForms.hpp"
+#include "RE/Bethesda/BGSDefaultObjectManager.hpp"
 
 namespace RE
 {

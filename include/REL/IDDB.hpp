@@ -1,7 +1,5 @@
 #pragma once
 
-#include "REL/Version.hpp"
-
 namespace REL
 {
 	class IDDB
@@ -28,7 +26,7 @@ namespace REL
 
 		[[nodiscard]] std::size_t id2offset(std::uint64_t a_id) const;
 
-        
+
 
 	protected:
 		friend class Offset2ID;
@@ -41,6 +39,6 @@ namespace REL
 
 		mmio::mapped_file_source _mmap;
 		std::span<const mapping_t> _id2offset;
-        
+
 	};
 }

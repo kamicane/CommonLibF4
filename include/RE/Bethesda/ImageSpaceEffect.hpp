@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/NetImmerse/NiSmartPointer.hpp"
 #include "RE/NetImmerse/NiTArray.hpp"
 
 namespace RE

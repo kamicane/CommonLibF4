@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BGSInventoryItem.hpp"
 #include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Scaleform/GFx/GFx_Player.hpp"
 

@@ -1,6 +1,8 @@
 #pragma once
 
+#include "RE/Bethesda/PipboyArray.hpp"
 #include "RE/Bethesda/PipboyDataGroup.hpp"
+#include "RE/Bethesda/Workshop.hpp"
 
 namespace RE
 {

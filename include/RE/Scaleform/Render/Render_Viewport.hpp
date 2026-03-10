@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Scaleform/Kernel/SF_Types.hpp"
 #include "RE/Scaleform/Render/Render_Types2D.hpp"
 
 namespace RE::Scaleform::Render

@@ -1,6 +1,8 @@
 #pragma once
 
 #include "RE/Bethesda/BSGraphics.hpp"
+#include "RE/Bethesda/BSShaderMaterial.hpp"
+#include "RE/Bethesda/BSShaderProperty.hpp"
 #include "RE/NetImmerse/NiRefObject.hpp"
 
 namespace RE

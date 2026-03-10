@@ -3,6 +3,8 @@
 #include "RE/Havok/hkBaseTypes.hpp"
 #include "RE/Havok/hkBlockStream.hpp"
 #include "RE/Havok/hkReferencedObject.hpp"
+#include "RE/Havok/hkVector4.hpp"
+#include "RE/Havok/hknpCollisionQueryCollector.hpp"
 
 namespace RE
 {

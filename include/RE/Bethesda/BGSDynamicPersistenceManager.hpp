@@ -3,6 +3,7 @@
 #include "RE/Bethesda/BSLock.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTSingleton.hpp"
+#include "RE/Bethesda/TESObjectREFRs.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
 
 namespace RE

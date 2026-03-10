@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BSFixedString.hpp"
 namespace RE::BSScript
 {
 	struct __declspec(novtable) IObjectHandlePolicy

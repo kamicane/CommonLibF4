@@ -1,0 +1,38 @@
+CompileFlags:
+  Add:
+  - -std:c++latest
+  - -Wno-trigraphs
+  - -ferror-limit=0
+  CompilationDatabase: ./
+Diagnostics:
+  UnusedIncludes: Strict
+
+  ClangTidy:
+    # FastCheckFilter: None
+
+    Add:
+      # - modernize-*
+      # - readability-qualified-auto
+      - cppcoreguidelines-*
+      # - readability-*
+      - bugprone-*
+      # - readability-identifier-naming.*
+    Remove:
+      - cppcoreguidelines-avoid-magic-numbers # imagine enabling this in RE
+      - bugprone-pointer-arithmetic-on-polymorphic-object
+      - readability-magic-numbers
+      - modernize-use-trailing-return-type
+      - modernize-use-nodiscard
+      - cppcoreguidelines-pro-type-reinterpret-cast
+      - cppcoreguidelines-avoid-non-const-global-variables
+      - cppcoreguidelines-owning-memory
+      - readability-implicit-bool-conversion
+      - readability-braces-around-statements
+      - readability-function-cognitive-complexity
+      - cppcoreguidelines-avoid-do-while
+      - readability-use-anyofallof
+      - readability-identifier-length
+      - bugprone-easily-swappable-parameters
+    CheckOptions:
+      cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor: true
+

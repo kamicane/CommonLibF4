@@ -8,6 +8,8 @@
 #include "RE/Bethesda/BSTEvent.hpp"
 #include "RE/Bethesda/BSTTuple.hpp"
 #include "RE/Bethesda/BSTextureDB.hpp"
+#include "RE/Bethesda/TESForms.hpp"
+#include "RE/Bethesda/TESObjectREFRs.hpp"
 #include "RE/NetImmerse/NiMatrix3.hpp"
 #include "RE/NetImmerse/NiObject.hpp"
 #include "RE/NetImmerse/NiQuaternion.hpp"
@@ -16,7 +18,7 @@
 #define F4SE_TEMPEFFECT_UTIL(a_elem)                                    \
 	case a_elem::TYPE:                                                  \
 		if constexpr (std::is_convertible_v<const a_elem*, const T*>) { \
-			return static_cast<const a_elem*>(this);                    \
+			return reinterpret_cast<const a_elem*>(this);               \
 		}                                                               \
 		break
 
@@ -152,27 +154,7 @@ namespace RE
 						std::is_reference<T>,
 						std::is_const<T>,
 						std::is_volatile<T>>>>>
-		[[nodiscard]] const T* As() const noexcept
-		{
-			switch (GetType()) {
-				F4SE_TEMPEFFECT_UTIL(BSTerrainEffect);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffectWeaponBlood);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffectScreenSpaceDecal);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffectGeometryDecal);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffectParticle);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffectDebris);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffectSPG);
-				F4SE_TEMPEFFECT_UTIL(BSTempEffect);
-				F4SE_TEMPEFFECT_UTIL(ReferenceEffect);
-				F4SE_TEMPEFFECT_UTIL(ModelReferenceEffect);
-				F4SE_TEMPEFFECT_UTIL(ShaderReferenceEffect);
-				F4SE_TEMPEFFECT_UTIL(SummonPlacementEffect);
-				default:
-					break;
-			}
-
-			return nullptr;
-		}
+		[[nodiscard]] const T* As() const noexcept;
 
 		// members
 		float lifetime;			// 10
@@ -500,5 +482,33 @@ namespace RE
 	};
 	static_assert(sizeof(SummonPlacementEffect) == 0xA0);
 }
+
+namespace RE
+{
+	template <
+		class T,
+		class>
+	[[nodiscard]] const T* BSTempEffect::As() const noexcept
+	{
+		switch (GetType()) {
+			F4SE_TEMPEFFECT_UTIL(BSTerrainEffect);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffectWeaponBlood);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffectScreenSpaceDecal);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffectGeometryDecal);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffectParticle);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffectDebris);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffectSPG);
+			F4SE_TEMPEFFECT_UTIL(BSTempEffect);
+			F4SE_TEMPEFFECT_UTIL(ReferenceEffect);
+			F4SE_TEMPEFFECT_UTIL(ModelReferenceEffect);
+			F4SE_TEMPEFFECT_UTIL(ShaderReferenceEffect);
+			F4SE_TEMPEFFECT_UTIL(SummonPlacementEffect);
+			default:
+				break;
+		}
+
+		return nullptr;
+	}
+} // namespace RE
 
 #undef F4SE_TEMPEFFECT_UTIL

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/Actor.hpp"
 #include "RE/Bethesda/BGSBodyPartDefs.hpp"
 #include "RE/Bethesda/BSPointerHandle.hpp"
 #include "RE/Bethesda/BSSoundHandle.hpp"

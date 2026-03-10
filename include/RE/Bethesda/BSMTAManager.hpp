@@ -1,6 +1,7 @@
 #pragma once
 
 #include "RE/Bethesda/Atomic.hpp"
+#include "RE/Bethesda/BSGeometry.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTSmallIndexScatterTable.hpp"
 

@@ -3,6 +3,7 @@
 #include "RE/Bethesda/BSFixedString.hpp"
 #include "RE/Bethesda/BSScript/IObjectProcessor.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
+#include "RE/Bethesda/BSTHashMap.hpp"
 #include "RE/Bethesda/BSTSmartPointer.hpp"
 
 namespace RE::BSScript

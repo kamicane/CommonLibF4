@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/BSTArray.hpp"
 namespace RE
 {
 	enum class POWER_ARMOR_HUD_VISIBILITY_RULE;

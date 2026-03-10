@@ -482,7 +482,7 @@ namespace REL
 	 * @param a_ae the value to use for Anniversary Edition (AE).
 	 */
 	template <class T>
-	[[nodiscard]] FALLOUT_REL T Relocate(
+	[[nodiscard]] inline T Relocate(
 		[[maybe_unused]] T a_f4,
 		[[maybe_unused]] T a_ng,
 		[[maybe_unused]] T a_ae) noexcept

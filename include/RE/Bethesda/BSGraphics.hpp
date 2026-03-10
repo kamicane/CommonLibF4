@@ -1,7 +1,9 @@
 #pragma once
 
 #include "RE/Bethesda/Atomic.hpp"
+#include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTHashMap.hpp"
+#include "RE/Bethesda/BSLock.hpp"
 #include "RE/NetImmerse/NiColor.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 #include "RE/NetImmerse/NiRect.hpp"

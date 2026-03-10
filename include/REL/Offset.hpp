@@ -56,7 +56,7 @@ namespace REL
 			return thisOffset ? base() + thisOffset : 0;
 		}
 
-		[[nodiscard]] FALLOUT_REL std::size_t offset() const noexcept
+		[[nodiscard]] inline std::size_t offset() const noexcept
 		{
 			switch (Module::GetRuntime()) {
 #ifdef ENABLE_FALLOUT_NG
@@ -76,7 +76,7 @@ namespace REL
 			}
 		}
 
-		[[nodiscard]] FALLOUT_REL explicit operator Offset() const noexcept { return Offset(offset()); }
+		[[nodiscard]] inline explicit operator Offset() const noexcept { return Offset(offset()); }
 
 	private:
 		[[nodiscard]] static std::uintptr_t base() { return Module::get().base(); }

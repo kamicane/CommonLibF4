@@ -1,5 +1,6 @@
 #pragma once
 
+#include "RE/Bethesda/MemoryManager.hpp"
 namespace RE
 {
 	class TESKey;

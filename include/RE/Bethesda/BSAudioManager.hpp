@@ -1,9 +1,11 @@
 #pragma once
 
 #include "RE/Bethesda/BSFixedString.hpp"
+#include "RE/Bethesda/BSSoundHandle.hpp"
 #include "RE/Bethesda/BSTArray.hpp"
 #include "RE/Bethesda/BSTHashMap.hpp"
 #include "RE/Bethesda/BSTList.hpp"
+#include "RE/Bethesda/FormComponents.hpp"
 #include "RE/NetImmerse/NiAVObject.hpp"
 #include "RE/NetImmerse/NiPoint.hpp"
 #include "RE/NetImmerse/NiSmartPointer.hpp"
@@ -18,7 +20,6 @@ namespace RE
 	class BSAudioManagerThread;
 	class BSGameSound;
 	class BSISoundDescriptor;
-	struct BSISoundDescriptor::ExtraResolutionData;
 	class BSISoundOutputModel;
 	class BSMultisound;
 	class BSSoundInfo;

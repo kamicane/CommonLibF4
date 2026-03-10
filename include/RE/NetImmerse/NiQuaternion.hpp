@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/NetImmerse/NiMatrix3.hpp"
+
 namespace RE
 {
 	class NiQuaternion

@@ -951,7 +951,7 @@ namespace RE
 	public:
 		[[nodiscard]] static EventSource_t* GetEventSource()
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
+			if (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESEquipEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESEquipEvent::GetEventSource }; // todo: test
 				return func();
@@ -1151,7 +1151,7 @@ namespace RE
 			// The Next-Gen ID doesn't seem to be anywhere near the other TES events.
 			// Maybe it was inlined or moved.
 
-			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
+			if (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESHitEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESHitEvent::GetEventSource };
 				return func();
@@ -1181,7 +1181,7 @@ namespace RE
 	public:
 		[[nodiscard]] static EventSource_t* GetEventSource()
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
+			if (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESMagicEffectApplyEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESMagicEffectApplyEvent::GetEventSource };
 				return func();
@@ -1219,7 +1219,7 @@ namespace RE
 	public:
 		[[nodiscard]] static EventSource_t* GetEventSource()
 		{
-			if FALLOUT_REL_CONSTEXPR (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
+			if (REL::Module::GetRuntime() > REL::Module::Runtime::OG) {
 				using func_t = decltype(&TESObjectLoadedEvent::GetEventSource);
 				static REL::Relocation<func_t> func{ ID::TESObjectLoadedEvent::GetEventSource };
 				return func();

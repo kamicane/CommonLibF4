@@ -1,5 +1,7 @@
 #pragma once
 
+#include "RE/NetImmerse/NiPoint.hpp"
+
 typedef float hkReal;
 namespace RE
 {
@@ -133,7 +135,7 @@ namespace RE
 			this->z /= l;
 			return *this;
 		}
-		hkVector4f& GetNormalized()
+		hkVector4f GetNormalized() const
 		{
 			hkVector4f norm = *this;
 			norm.Normalize();
